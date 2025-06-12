@@ -12,8 +12,8 @@ export default function Home() {
   const firstText = useRef(null);
   const secondText = useRef(null);
   const slider = useRef(null);
+  const directionRef = useRef(-1);
   let xPercent = 0;
-  let direction = -1;
 
   useLayoutEffect( () => {
     gsap.registerPlugin(ScrollTrigger);
@@ -23,7 +23,7 @@ export default function Home() {
         scrub: 0.25,
         start: 0,
         end: window.innerHeight,
-        onUpdate: e => direction = e.direction * -1
+        onUpdate: e => directionRef.current = e.direction * -1
       },
       x: "-500px",
     })
@@ -40,7 +40,7 @@ export default function Home() {
     gsap.set(firstText.current, {xPercent: xPercent})
     gsap.set(secondText.current, {xPercent: xPercent})
     requestAnimationFrame(animate);
-    xPercent += 0.1 * direction;
+    xPercent += 0.1 * directionRef.current;
   }
 
   return (

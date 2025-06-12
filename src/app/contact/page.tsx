@@ -14,36 +14,39 @@ export default function ContactPage() {
     const canvasRef = useRef(null);
     const email = 'talalizakariapro@gmail.com';
 
-    // Variables pour l'animation Three.js
-    let scene, camera, renderer, particles;
-    let targetX = 0;
-    let targetY = 0;
-    let windowHalfX = 0;
-    let windowHalfY = 0;
+    // Variables pour l'animation Three.js - using useRef to preserve values
+    const sceneRef = useRef(null);
+    const cameraRef = useRef(null);
+    const rendererRef = useRef(null);
+    const particlesRef = useRef(null);
+    const targetXRef = useRef(0);
+    const targetYRef = useRef(0);
+    const windowHalfXRef = useRef(0);
+    const windowHalfYRef = useRef(0);
 
     // Gestion du mouvement de la souris
     const handleMouseMove = (event) => {
-        windowHalfX = window.innerWidth / 2;
-        windowHalfY = window.innerHeight / 2;
+        windowHalfXRef.current = window.innerWidth / 2;
+        windowHalfYRef.current = window.innerHeight / 2;
         
-        targetX = (event.clientX - windowHalfX) * 0.001;
-        targetY = (event.clientY - windowHalfY) * 0.001;
+        targetXRef.current = (event.clientX - windowHalfXRef.current) * 0.001;
+        targetYRef.current = (event.clientY - windowHalfYRef.current) * 0.001;
     };
 
     useEffect(() => {
         if (!canvasRef.current) return;
 
         // Initialisation de la scène
-        scene = new THREE.Scene();
-        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        renderer = new THREE.WebGLRenderer({ 
+        sceneRef.current = new THREE.Scene();
+        cameraRef.current = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        rendererRef.current = new THREE.WebGLRenderer({ 
             canvas: canvasRef.current,
             alpha: true,
             antialias: true 
         });
 
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        rendererRef.current.setSize(window.innerWidth, window.innerHeight);
+        rendererRef.current.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
         // Création des particules
         const particlesGeometry = new THREE.BufferGeometry();
@@ -63,39 +66,43 @@ export default function ContactPage() {
             blending: THREE.AdditiveBlending // Ajout d'un effet de lueur
         });
 
-        particles = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particles);
+        particlesRef.current = new THREE.Points(particlesGeometry, particlesMaterial);
+        sceneRef.current.add(particlesRef.current);
 
-        camera.position.z = 2;
+        cameraRef.current.position.z = 2;
 
         // Animation
         const animate = () => {
             requestAnimationFrame(animate);
             
-            if (particles) {
+            if (particlesRef.current) {
                 // Rotation de base
-                particles.rotation.x += 0.002;
-                particles.rotation.y += 0.002;
+                particlesRef.current.rotation.x += 0.002;
+                particlesRef.current.rotation.y += 0.002;
                 
                 // Rotation basée sur la position de la souris
-                particles.rotation.x += 0.08 * (targetY - particles.rotation.x);
-                particles.rotation.y += 0.08 * (targetX - particles.rotation.y);
+                particlesRef.current.rotation.x += 0.08 * (targetYRef.current - particlesRef.current.rotation.x);
+                particlesRef.current.rotation.y += 0.08 * (targetXRef.current - particlesRef.current.rotation.y);
 
                 // Animation de flottement
                 const time = Date.now() * 0.0002;
-                particles.position.y = Math.sin(time) * 0.1;
+                particlesRef.current.position.y = Math.sin(time) * 0.1;
             }
             
-            renderer.render(scene, camera);
+            if (rendererRef.current && sceneRef.current && cameraRef.current) {
+                rendererRef.current.render(sceneRef.current, cameraRef.current);
+            }
         };
 
         animate();
 
         // Gestion du redimensionnement
         const handleResize = () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            if (cameraRef.current && rendererRef.current) {
+                cameraRef.current.aspect = window.innerWidth / window.innerHeight;
+                cameraRef.current.updateProjectionMatrix();
+                rendererRef.current.setSize(window.innerWidth, window.innerHeight);
+            }
         };
 
         window.addEventListener('resize', handleResize);
@@ -105,12 +112,12 @@ export default function ContactPage() {
         return () => {
             window.removeEventListener('resize', handleResize);
             window.removeEventListener('mousemove', handleMouseMove);
-            if (renderer) {
-                renderer.dispose();
+            if (rendererRef.current) {
+                rendererRef.current.dispose();
             }
-            if (particles) {
-                particles.geometry.dispose();
-                particles.material.dispose();
+            if (particlesRef.current) {
+                particlesRef.current.geometry.dispose();
+                particlesRef.current.material.dispose();
             }
         };
     }, []);
@@ -139,7 +146,7 @@ export default function ContactPage() {
             
             <div className={styles.container}>
                 <div className={styles.heroSection}>
-                    <h1>Créons Ensemble Quelque Chose d'Extraordinaire</h1>
+                    <h1>Créons Ensemble Quelque Chose d&apos;Extraordinaire</h1>
                 </div>
 
                 <div className={styles.contentGrid}>
@@ -216,7 +223,7 @@ export default function ContactPage() {
                                     Envoyer un email
                                 </a>
                                 <button onClick={handleCopy} className={styles.copyButton}>
-                                    {copied ? 'Copié !' : 'Copier l\'adresse'}
+                                    {copied ? 'Copié !' : 'Copier l&apos;adresse'}
                                 </button>
                             </div>
                         </div>
@@ -240,4 +247,4 @@ export default function ContactPage() {
             </div>
         </div>
     );
-} 
+}

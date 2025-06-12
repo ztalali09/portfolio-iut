@@ -6,8 +6,6 @@ import { FaGithub, FaExternalLinkAlt, FaTimes, FaChevronLeft, FaChevronRight, Fa
 import { useEffect } from 'react';
 
 const ProjectModal = ({ isOpen, onClose, project, onNext, onPrev, currentIndex, totalProjects }) => {
-  if (!project) return null;
-
   useEffect(() => {
     const handleScroll = () => {
       if (isOpen) {
@@ -23,6 +21,8 @@ const ProjectModal = ({ isOpen, onClose, project, onNext, onPrev, currentIndex, 
       document.body.style.overflow = '';
     };
   }, [isOpen]);
+
+  if (!project) return null;
 
   const handleClose = () => {
     document.body.style.overflow = '';
@@ -68,7 +68,7 @@ const ProjectModal = ({ isOpen, onClose, project, onNext, onPrev, currentIndex, 
                   />
                 </div>
                 {project.title === "Avatar Gaming" && (
-                  <p className={styles.figureCaption}>Figure 1 : Page d'accueil présentant la collection de jeux disponibles</p>
+                  <p className={styles.figureCaption}>Figure 1 : Page d&apos;accueil présentant la collection de jeux disponibles</p>
                 )}
               </div>
 
@@ -189,7 +189,7 @@ const ProjectModal = ({ isOpen, onClose, project, onNext, onPrev, currentIndex, 
                             </div>
                             <div className={styles.textContent}>
                               <h3>Sélection du Mode de Jeu</h3>
-                              <p>L'interface de sélection du mode de jeu permet de choisir entre différents modes : Humain vs Humain, Humain vs IA, ou IA vs IA. Cette modularité illustre l'implémentation réussie de l'architecture MVC et la gestion des choix utilisateurs.</p>
+                              <p>L&apos;interface de sélection du mode de jeu permet de choisir entre différents modes : Humain vs Humain, Humain vs IA, ou IA vs IA. Cette modularité illustre l&apos;implémentation réussie de l&apos;architecture MVC et la gestion des choix utilisateurs.</p>
                             </div>
                           </div>
 
@@ -197,7 +197,7 @@ const ProjectModal = ({ isOpen, onClose, project, onNext, onPrev, currentIndex, 
                           <div className={styles.alternatingSection}>
                             <div className={styles.textContent}>
                               <h3>Déroulement de la Partie</h3>
-                              <p>Le cœur du gameplay montre l'affichage dynamique du plateau pendant une partie. Les pions sont représentés en ASCII, permettant de suivre l'évolution du jeu en temps réel. Cette partie démontre la maîtrise de la boucle de jeu et de l'affichage console.</p>
+                              <p>Le cœur du gameplay montre l&apos;affichage dynamique du plateau pendant une partie. Les pions sont représentés en ASCII, permettant de suivre l&apos;évolution du jeu en temps réel. Cette partie démontre la maîtrise de la boucle de jeu et de l&apos;affichage console.</p>
                             </div>
                             <div className={styles.imageContent}>
                               <Image
@@ -225,7 +225,7 @@ const ProjectModal = ({ isOpen, onClose, project, onNext, onPrev, currentIndex, 
                             </div>
                             <div className={styles.textContent}>
                               <h3>Fin de Partie et Choix Post-Jeu</h3>
-                              <p>L'interface de fin de partie propose trois options : rejouer, retourner au menu principal, ou quitter. Cette étape finale illustre la gestion complète du cycle de vie d'une partie et l'expérience utilisateur soignée.</p>
+                              <p>L&apos;interface de fin de partie propose trois options : rejouer, retourner au menu principal, ou quitter. Cette étape finale illustre la gestion complète du cycle de vie d&apos;une partie et l&apos;expérience utilisateur soignée.</p>
                               <p style={{ fontStyle: 'italic', opacity: 0.7 }}>Veuillez télécharger les traces pour voir le commentaire en entier.</p>
                             </div>
                           </div>
@@ -236,8 +236,8 @@ const ProjectModal = ({ isOpen, onClose, project, onNext, onPrev, currentIndex, 
                           <div className={styles.alternatingSection}>
                             <div className={styles.textContent}>
                               <h3>Gestion de la Connexion MySQL</h3>
-                              <p>Dans ce fichier qu'on voit dans la figure 2, j'ai mis en œuvre le module pymysql pour établir la connexion à MySQL. J'ai utilisé l'objet g fourni par Flask pour gérer une connexion persistante au sein d'une requête HTTP, évitant ainsi d'ouvrir plusieurs connexions simultanées. Cette approche repose sur le principe de singleton, une bonne pratique dans le développement web.</p>
-                              <p>La fonction get_db() initialise la connexion si elle n'existe pas encore. Les paramètres de connexion (nom d'hôte, identifiants, nom de la base, encodage) sont définis en dur pour l'instant, mais cette structure est facilement extensible vers des variables d'environnement.</p>
+                              <p>Dans ce fichier qu&apos;on voit dans la figure 2, j&apos;ai mis en œuvre le module pymysql pour établir la connexion à MySQL. J&apos;ai utilisé l&apos;objet g fourni par Flask pour gérer une connexion persistante au sein d&apos;une requête HTTP, évitant ainsi d&apos;ouvrir plusieurs connexions simultanées. Cette approche repose sur le principe de singleton, une bonne pratique dans le développement web.</p>
+                              <p>La fonction get_db() initialise la connexion si elle n&apos;existe pas encore. Les paramètres de connexion (nom d&apos;hôte, identifiants, nom de la base, encodage) sont définis en dur pour l&apos;instant, mais cette structure est facilement extensible vers des variables d&apos;environnement.</p>
                               <p style={{ fontStyle: 'italic', opacity: 0.7 }}>Veuillez télécharger les traces pour voir le commentaire en entier.</p>
                             </div>
                             <div className={styles.imageContent}>
@@ -256,8 +256,8 @@ const ProjectModal = ({ isOpen, onClose, project, onNext, onPrev, currentIndex, 
                           <div className={styles.alternatingSection}>
                             <div className={styles.textContent}>
                               <h3>Route d'Administration</h3>
-                              <p>La route GET @admin_telephone.route('/admin/telephone/add', methods=['GET']) est utilisée pour préparer et afficher la page d'ajout d'un nouveau téléphone depuis l'interface d'administration. Cette route joue un rôle clé dans la séparation logique entre la récupération des données et l'affichage du formulaire.</p>
-                              <p>Lorsqu'un administrateur accède à cette URL, la fonction add_telephone() est exécutée. Elle commence par établir une connexion à la base de données via get_db().cursor(). Ensuite, une requête SQL est définie pour sélectionner l'identifiant et le libellé de tous les types de téléphones présents dans la table type_telephone, triés par ordre alphabétique de libellé.</p>
+                              <p>La route GET @admin_telephone.route(&apos;/admin/telephone/add&apos;, methods=[&apos;GET&apos;]) est utilisée pour préparer et afficher la page d&apos;ajout d&apos;un nouveau téléphone depuis l&apos;interface d&apos;administration. Cette route joue un rôle clé dans la séparation logique entre la récupération des données et l&apos;affichage du formulaire.</p>
+                              <p>Lorsqu&apos;un administrateur accède à cette URL, la fonction add_telephone() est exécutée. Elle commence par établir une connexion à la base de données via get_db().cursor(). Ensuite, une requête SQL est définie pour sélectionner l&apos;identifiant et le libellé de tous les types de téléphones présents dans la table type_telephone, triés par ordre alphabétique de libellé.</p>
                               <p style={{ fontStyle: 'italic', opacity: 0.7 }}>Veuillez télécharger les traces pour voir le commentaire en entier.</p>
                             </div>
                             <div className={styles.imageContent}>
@@ -363,4 +363,4 @@ const ProjectModal = ({ isOpen, onClose, project, onNext, onPrev, currentIndex, 
   );
 };
 
-export default ProjectModal; 
+export default ProjectModal;
