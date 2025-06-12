@@ -139,7 +139,13 @@ export default function Home() {
           projects.map((project, index) => {
             return <Project index={index} title={project.title} manageModal={manageModal} key={index}>
               <div className={styles.projectImage}>
-                <img src={`/images/${project.src}`} alt={project.title} />
+                <Image 
+                  src={`/images/${project.src}`}
+                  alt={project.title}
+                  width={300}
+                  height={0}
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
             </Project>
           })

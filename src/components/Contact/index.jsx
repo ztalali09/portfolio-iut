@@ -6,7 +6,7 @@ import { useScroll, motion, useTransform, useSpring } from 'framer-motion';
 import Magnetic from '../../common/Magnetic';
 import Link from 'next/link';
 
-export default function index() {
+export default function Contact() {
     const container = useRef(null);
     const [currentTime, setCurrentTime] = useState('');
     const { scrollYProgress } = useScroll({

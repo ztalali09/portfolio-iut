@@ -6,6 +6,7 @@ import { menuSlide } from '../animation';
 import Link from './Link';
 import Curve from './Curve';
 import Footer from './Footer';
+import { slideUp } from './animation';
 
 const navItems = [
   {
@@ -26,7 +27,7 @@ const navItems = [
   },
 ]
 
-export default function index() {
+export default function Nav() {
 
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);

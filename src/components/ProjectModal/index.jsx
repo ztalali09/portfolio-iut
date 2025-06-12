@@ -5,24 +5,23 @@ import Image from 'next/image';
 import { FaGithub, FaExternalLinkAlt, FaTimes, FaChevronLeft, FaChevronRight, FaBrain, FaCode, FaLightbulb, FaDownload } from 'react-icons/fa';
 import { useEffect } from 'react';
 
-const ProjectModal = ({ isOpen, onClose, project, onNext, onPrev, currentIndex, totalProjects }) => {
-  if (!project) return null;
+export default function ProjectModal({ isOpen, onClose, project, onNext, onPrev, currentIndex, totalProjects }) {
+  const handleScroll = () => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  };
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (isOpen) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = '';
-      }
-    };
-
     handleScroll();
-
     return () => {
       document.body.style.overflow = '';
     };
   }, [isOpen]);
+
+  if (!project) return null;
 
   const handleClose = () => {
     document.body.style.overflow = '';
@@ -361,6 +360,4 @@ const ProjectModal = ({ isOpen, onClose, project, onNext, onPrev, currentIndex, 
       )}
     </AnimatePresence>
   );
-};
-
-export default ProjectModal; 
+} 
