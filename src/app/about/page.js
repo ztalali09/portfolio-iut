@@ -237,7 +237,7 @@ export default function AboutPage() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
               >
-                Étudiant en développement web & Créateur d'expériences digitales
+                Étudiant en développement web & Créateur d&apos;expériences digitales
               </motion.p>
 
               <motion.div 
