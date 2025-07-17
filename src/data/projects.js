@@ -1,5 +1,51 @@
 export const projects = [
   {
+    id: 5,
+    title: "Gaming Zone System — Modular & Premium Booking Platform",
+    thumbnailImage: "/images/blank.png",
+    mainImage: "/images/blank.png",
+    color: "#455CE9",
+    description: "A turnkey solution for reservation management, adaptable to any sector (gaming, hotels, clubs, stadiums…).",
+    context: "Solo-developed in 1.5 months — fullstack, secure, and highly adaptable.",
+    target: "Businesses and organizations seeking a premium, modular booking platform.",
+    technologies: [
+      "Fullstack",
+      "Advanced security",
+      "Highly adaptable",
+      "Solo development"
+    ],
+    features: [
+      "Modular booking system",
+      "Premium user experience",
+      "Advanced security features",
+      "Sector-agnostic adaptability"
+    ],
+    badges: [
+      "Fullstack",
+      "Solo-developed in 1.5 months",
+      "Advanced security",
+      "Adaptable to any sector"
+    ],
+    tasks: [
+      "System architecture design",
+      "Frontend and backend development",
+      "Security implementation",
+      "Deployment and documentation"
+    ],
+    learnings: [
+      "End-to-end project management",
+      "Security best practices",
+      "Modular system design"
+    ],
+    challenges: [
+      "Ensuring cross-sector adaptability",
+      "Implementing robust security",
+      "Delivering a premium UX solo"
+    ],
+    github: null,
+    demo: null
+  },
+  {
     id: 1,
     title: "Techmobile",
     thumbnailImage: "/images/telephones.jpg",

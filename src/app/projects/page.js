@@ -161,12 +161,23 @@ export default function ProjectsPage() {
                       <FaGithub /> Source Code
                     </a>
                     )}
-                    <button 
-                      onClick={() => handleProjectClick(project.id)} 
-                      className={styles.projectLink}
-                    >
-                      <FaExternalLinkAlt /> Learn More
-                    </button>
+                    {project.title.startsWith('Gaming Zone System') ? (
+                      <a
+                        href="/projects/gaming-zone-system"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.projectLink}
+                      >
+                        <FaExternalLinkAlt /> Learn More
+                      </a>
+                    ) : (
+                      <button 
+                        onClick={() => handleProjectClick(project.id)} 
+                        className={styles.projectLink}
+                      >
+                        <FaExternalLinkAlt /> Learn More
+                      </button>
+                    )}
                   </div>
                 </div>
                 <div className={styles.projectImage}>
