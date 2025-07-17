@@ -168,8 +168,8 @@ export const projects = [
       "Java 17",
       "Maven",
       "Boardifier (MVC framework)",
-      "JavaFX (à venir)",
-      "Deeplearning4j (IA avancée, à venir)",
+      "JavaFX (upcoming)",
+      "Deeplearning4j (advanced AI, upcoming)",
       "JUnit 5"
     ],
     features: [
