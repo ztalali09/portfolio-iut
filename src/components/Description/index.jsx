@@ -3,7 +3,7 @@ import { useInView, motion } from 'framer-motion';
 import { useRef } from 'react';
 import { slideUp, opacity } from './animation';
 import Rounded from '../../common/RoundedButton';
-export default function index() {
+export default function Description() {
 
     const phrase = "Étudiant curieux et motivé, je construis pas à pas un parcours solide en informatique. Passionné par la technologie et le code, j'accorde autant d'importance à la compréhension qu'à la création.";
     const description = useRef(null);

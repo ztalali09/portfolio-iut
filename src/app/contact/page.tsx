@@ -50,7 +50,7 @@ export default function ContactPage() {
 
         // Création des particules
         const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCount = 2000;
+        const particlesCount = 1000;
         const posArray = new Float32Array(particlesCount * 3);
 
         for(let i = 0; i < particlesCount * 3; i++) {
@@ -223,7 +223,7 @@ export default function ContactPage() {
                                     Envoyer un email
                                 </a>
                                 <button onClick={handleCopy} className={styles.copyButton}>
-                                    {copied ? 'Copié !' : 'Copier l&apos;adresse'}
+                                    {copied ? 'Copié !' : "Copier l'adresse"}
                                 </button>
                             </div>
                         </div>
@@ -235,7 +235,7 @@ export default function ContactPage() {
                 <div className={styles.footerContent}>
                     <div className={styles.footerInfo}>
                         <p>Version 2025 © Édition</p>
-                        <p>{new Date().toLocaleTimeString('fr-FR', { timeZone: 'Europe/Paris' })} Paris</p>
+                        <p>{currentTime} Paris</p>
                     </div>
                     <div className={styles.footerLinks}>
                         <a href="https://www.linkedin.com/in/zakaria-talali-030a2334a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
