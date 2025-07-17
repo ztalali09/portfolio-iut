@@ -5,6 +5,7 @@ import styles from '../page.module.scss';
 import { motion, AnimatePresence } from 'framer-motion';
 import * as THREE from 'three';
 import { FaDownload, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { MdSportsEsports, MdHotel, MdSportsSoccer, MdStadium, MdMeetingRoom, MdAdminPanelSettings, MdHistory, MdCategory, MdWeb, MdCode, MdStorage, MdBuild, MdBugReport, MdStar, MdPerson, MdSchool, MdLock, MdEventAvailable, MdDashboard, MdNotificationsActive, MdDevices, MdSecurity, MdTrendingUp, MdDescription, MdUpdate, MdSupportAgent } from 'react-icons/md';
 
 const slideshowImages = [
   '/images/blank.png',
@@ -278,6 +279,93 @@ export default function GamingZoneSystem() {
           </div>
         </div>
       </section>
+      {/* Backend robuste et sécurisé */}
+      <section className={styles.backendSection}>
+        <div className={styles.backendContent}>
+          <div className={styles.backendText}>
+            <h2>Backend robuste et sécurisé</h2>
+            <p>
+              Backend Python/Flask modulaire, sécurisé, documenté.<br/>
+              Gestion des sessions, sécurité, notifications, emails, logique métier complexe.
+            </p>
+            <ul className={styles.backendPoints}>
+              <li>Authentification sécurisée</li>
+              <li>reCAPTCHA</li>
+              <li>Séparation admin</li>
+              <li>Tests automatisés</li>
+              <li>Logs</li>
+            </ul>
+          </div>
+          <div className={styles.backendSchema}>
+            <div className={styles.schemaBlocks}>
+              <div className={styles.schemaBlock}>Frontend<br/>(Next.js)</div>
+              <span className={styles.schemaArrow}>↔</span>
+              <div className={styles.schemaBlock}>API<br/>Flask</div>
+              <span className={styles.schemaArrow}>↔</span>
+              <div className={styles.schemaBlock}>MySQL</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Adaptabilité sectorielle */}
+      <section className={styles.sectorSection}>
+        <div className={styles.sectorContent}>
+          <h2>Adaptabilité sectorielle</h2>
+          <p>
+            Adaptable à : gaming centers, hôtels, clubs de sport, stades, coworking, etc.<br/>
+            Chaque ressource (chambre, terrain, salle, équipement) peut être gérée par le même système.
+          </p>
+          <div className={styles.sectorGrid}>
+            <div className={styles.sectorItem}>
+              <MdSportsEsports size={48} color="#455CE9" />
+              <span>Gaming center</span>
+            </div>
+            <div className={styles.sectorItem}>
+              <MdHotel size={48} color="#455CE9" />
+              <span>Hôtel</span>
+            </div>
+            <div className={styles.sectorItem}>
+              <MdSportsSoccer size={48} color="#455CE9" />
+              <span>Club de sport</span>
+            </div>
+            <div className={styles.sectorItem}>
+              <MdStadium size={48} color="#455CE9" />
+              <span>Stade</span>
+            </div>
+            <div className={styles.sectorItem}>
+              <MdMeetingRoom size={48} color="#455CE9" />
+              <span>Coworking</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Scalabilité et gestion avancée */}
+      <section className={styles.scalabilitySection}>
+        <div className={styles.scalabilityContent}>
+          <h2>Scalabilité et gestion avancée</h2>
+          <p>
+            Gestion multi-utilisateurs, multi-ressources, multi-roles.<br/>
+            Système prêt à évoluer pour gérer plus de clients, de ressources, ou de fonctionnalités.
+          </p>
+          <div className={styles.scalabilityCarousel}>
+            <button className={styles.carouselArrow} aria-label="Précédent" style={{visibility: 'hidden'}}>&lt;</button>
+            <div className={styles.scalabilityMockup}>
+              <MdAdminPanelSettings size={48} color="#455CE9" />
+              <span>Gestion des rôles dans l’admin</span>
+            </div>
+            <div className={styles.scalabilityMockup}>
+              <MdHistory size={48} color="#455CE9" />
+              <span>Historique multi-utilisateurs</span>
+            </div>
+            <div className={styles.scalabilityMockup}>
+              <MdCategory size={48} color="#455CE9" />
+              <span>Sélection de différents types de ressources</span>
+            </div>
+            <button className={styles.carouselArrow} aria-label="Suivant" style={{visibility: 'hidden'}}>&gt;</button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className={styles.cta}>
         <motion.div
@@ -303,6 +391,78 @@ export default function GamingZoneSystem() {
             </a>
           </div>
         </motion.div>
+      </section>
+      {/* Technologies utilisées */}
+      <section className={styles.techSummarySection}>
+        <div className={styles.techSummaryContent}>
+          <h2>Technologies utilisées</h2>
+          <div className={styles.techGrid}>
+            <div>
+              <div className={styles.techIcon}><MdWeb size={36} color="#455CE9" /></div>
+              <h3>Frontend</h3>
+              <ul>
+                <li>Next.js 15 (React 19)</li>
+                <li>TypeScript</li>
+                <li>Tailwind CSS</li>
+                <li>Radix UI</li>
+                <li>Lucide React (icônes)</li>
+                <li>React Google reCAPTCHA</li>
+              </ul>
+            </div>
+            <div>
+              <div className={styles.techIcon}><MdCode size={36} color="#455CE9" /></div>
+              <h3>Backend</h3>
+              <ul>
+                <li>Python 3</li>
+                <li>Flask 2.3</li>
+                <li>Flask-Mail</li>
+                <li>Flask-CORS</li>
+                <li>PyMySQL</li>
+                <li>bcrypt</li>
+                <li>PyJWT</li>
+              </ul>
+            </div>
+            <div>
+              <div className={styles.techIcon}><MdStorage size={36} color="#455CE9" /></div>
+              <h3>Database</h3>
+              <ul>
+                <li>MySQL (schéma relationnel avancé)</li>
+              </ul>
+            </div>
+            <div>
+              <div className={styles.techIcon}><MdBuild size={36} color="#455CE9" /></div>
+              <h3>DevOps & Tools</h3>
+              <ul>
+                <li>Shell scripts</li>
+                <li>pnpm / npm</li>
+                <li>Git & GitHub</li>
+                <li>Markdown</li>
+                <li>Docker (optionnel)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features */}
+      <section className={styles.keyFeaturesSection}>
+        <div className={styles.keyFeaturesContent}>
+          <h2>Key Features</h2>
+          <ul className={styles.keyFeaturesList}>
+            <li><MdLock size={24} color="#455CE9" /> Secure Authentication</li>
+            <li><MdEventAvailable size={24} color="#455CE9" /> Real-Time Booking System</li>
+            <li><MdDashboard size={24} color="#455CE9" /> Admin Dashboard</li>
+            <li><MdPerson size={24} color="#455CE9" /> User Profile & History</li>
+            <li><MdNotificationsActive size={24} color="#455CE9" /> Notifications & Reminders</li>
+            <li><MdDevices size={24} color="#455CE9" /> Responsive Design</li>
+            <li><MdBuild size={24} color="#455CE9" /> Customizable Resources</li>
+            <li><MdSecurity size={24} color="#455CE9" /> Advanced Security</li>
+            <li><MdTrendingUp size={24} color="#455CE9" /> Scalability</li>
+            <li><MdDescription size={24} color="#455CE9" /> Comprehensive Documentation</li>
+            <li><MdUpdate size={24} color="#455CE9" /> Continuous Updates</li>
+            <li><MdSupportAgent size={24} color="#455CE9" /> Support & Assistance</li>
+          </ul>
+        </div>
       </section>
       {/* Footer */}
       <footer className={styles.footer}>
