@@ -109,21 +109,6 @@ export default function GamingZoneSystem() {
     <div className={styles.projectsPage}>
       <Header />
       <canvas ref={canvasRef} className={styles.backgroundCanvas} />
-      {/* Slideshow */}
-      <div style={{ width: '100vw', position: 'relative', height: 340, borderRadius: 0, overflow: 'hidden', boxShadow: '0 8px 32px rgba(69,92,233,0.10)', margin: '0 calc(50% - 50vw)' }}>
-        <AnimatePresence mode="wait">
-          <motion.img
-            key={slide}
-            src={slideshowImages[slide]}
-            alt="Gaming Zone System Slideshow"
-            initial={{ opacity: 0, scale: 1.04 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.98 }}
-            transition={{ duration: 0.7 }}
-            style={{ width: '100vw', height: 340, objectFit: 'cover', borderRadius: 0 }}
-          />
-        </AnimatePresence>
-      </div>
       <section className={styles.hero + ' ' + styles.gamingZoneHero} style={{ minHeight: 0, padding: '60px 0 0 0' }}>
         <div className={styles.heroContent}>
           <h3>Gaming Zone System — Plateforme de réservation modulaire & premium</h3>
@@ -156,13 +141,6 @@ export default function GamingZoneSystem() {
       {/* Expérience utilisateur sur tous les supports */}
       <section className={styles.responsiveSection}>
         <div className={styles.responsiveContent}>
-          <div className={styles.responsiveText}>
-            <h2>Expérience utilisateur sur tous les supports</h2>
-            <p>
-              L’interface est 100% responsive, optimisée pour mobile, tablette et desktop.<br/>
-              Les utilisateurs et admins bénéficient d’une expérience fluide sur tous les appareils.
-            </p>
-          </div>
           <div className={styles.uxCarousel}>
             <button className={styles.carouselArrow} onClick={handlePrevUx} aria-label="Précédent">
               <FaChevronLeft />
@@ -174,6 +152,13 @@ export default function GamingZoneSystem() {
             <button className={styles.carouselArrow} onClick={handleNextUx} aria-label="Suivant">
               <FaChevronRight />
             </button>
+          </div>
+          <div className={styles.responsiveText}>
+            <h2>Expérience utilisateur sur tous les supports</h2>
+            <p>
+              L’interface est 100% responsive, optimisée pour mobile, tablette et desktop.<br/>
+              Les utilisateurs et admins bénéficient d’une expérience fluide sur tous les appareils.
+            </p>
           </div>
         </div>
       </section>
@@ -252,30 +237,6 @@ export default function GamingZoneSystem() {
             <div className={styles.featureIcon}><img src="/images/blank.png" alt="Emails de notifications" /></div>
             <h3>Emails de notifications</h3>
             <p>Recevez des notifications importantes et des rappels directement par email.</p>
-          </div>
-        </div>
-      </section>
-      {/* Expérience utilisateur sur tous les supports (duplicata) */}
-      <section className={styles.responsiveSection}>
-        <div className={styles.responsiveContent}>
-          <div className={styles.responsiveText}>
-            <h2>Expérience utilisateur sur tous les supports</h2>
-            <p>
-              L’interface est 100% responsive, optimisée pour mobile, tablette et desktop.<br/>
-              Les utilisateurs et admins bénéficient d’une expérience fluide sur tous les appareils.
-            </p>
-          </div>
-          <div className={styles.uxCarousel}>
-            <button className={styles.carouselArrow} onClick={handlePrevUx} aria-label="Précédent">
-              <FaChevronLeft />
-            </button>
-            <div className={styles.mockup}>
-              <img src={uxScreens[uxIndex].img} alt={uxScreens[uxIndex].title} />
-              <span>{uxScreens[uxIndex].title}</span>
-            </div>
-            <button className={styles.carouselArrow} onClick={handleNextUx} aria-label="Suivant">
-              <FaChevronRight />
-            </button>
           </div>
         </div>
       </section>
@@ -365,33 +326,6 @@ export default function GamingZoneSystem() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className={styles.cta}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className={styles.ctaContent}
-        >
-          <h2>Let’s Get in Touch</h2>
-          <p>Interested in collaborating or want to know more about Gaming Zone System? Let’s connect and build something great together.</p>
-          <div className={styles.ctaButtons}>
-            <a 
-              href="/images/CV_Talali_Zakaria.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className={styles.primaryButton}
-            >
-              <FaDownload /> Download My Resume
-            </a>
-            <a href="/contact" className={styles.secondaryButton}>
-              Contact Me
-            </a>
-          </div>
-        </motion.div>
-      </section>
       {/* Technologies utilisées */}
       <section className={styles.techSummarySection}>
         <div className={styles.techSummaryContent}>
@@ -443,7 +377,6 @@ export default function GamingZoneSystem() {
           </div>
         </div>
       </section>
-
       {/* Key Features */}
       <section className={styles.keyFeaturesSection}>
         <div className={styles.keyFeaturesContent}>
@@ -463,6 +396,32 @@ export default function GamingZoneSystem() {
             <li><MdSupportAgent size={24} color="#455CE9" /> Support & Assistance</li>
           </ul>
         </div>
+      </section>
+      {/* Section Contact déplacée en bas */}
+      <section className={styles.cta}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className={styles.ctaContent}
+        >
+          <h2>Let’s Get in Touch</h2>
+          <p>Interested in collaborating or want to know more about Gaming Zone System? Let’s connect and build something great together.</p>
+          <div className={styles.ctaButtons}>
+            <a 
+              href="/images/CV_Talali_Zakaria.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={styles.primaryButton}
+            >
+              <FaDownload /> Download My Resume
+            </a>
+            <a href="/contact" className={styles.secondaryButton}>
+              Contact Me
+            </a>
+          </div>
+        </motion.div>
       </section>
       {/* Footer */}
       <footer className={styles.footer}>
