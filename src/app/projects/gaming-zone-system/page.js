@@ -141,6 +141,13 @@ export default function GamingZoneSystem() {
       {/* Expérience utilisateur sur tous les supports */}
       <section className={styles.responsiveSection}>
         <div className={styles.responsiveContent}>
+          <div className={styles.responsiveText}>
+            <h2>Expérience utilisateur sur tous les supports</h2>
+            <p>
+              L’interface est 100% responsive, optimisée pour mobile, tablette et desktop.<br/>
+              Les utilisateurs et admins bénéficient d’une expérience fluide sur tous les appareils.
+            </p>
+          </div>
           <div className={styles.uxCarousel}>
             <button className={styles.carouselArrow} onClick={handlePrevUx} aria-label="Précédent">
               <FaChevronLeft />
@@ -152,13 +159,6 @@ export default function GamingZoneSystem() {
             <button className={styles.carouselArrow} onClick={handleNextUx} aria-label="Suivant">
               <FaChevronRight />
             </button>
-          </div>
-          <div className={styles.responsiveText}>
-            <h2>Expérience utilisateur sur tous les supports</h2>
-            <p>
-              L’interface est 100% responsive, optimisée pour mobile, tablette et desktop.<br/>
-              Les utilisateurs et admins bénéficient d’une expérience fluide sur tous les appareils.
-            </p>
           </div>
         </div>
       </section>
@@ -237,6 +237,30 @@ export default function GamingZoneSystem() {
             <div className={styles.featureIcon}><img src="/images/blank.png" alt="Emails de notifications" /></div>
             <h3>Emails de notifications</h3>
             <p>Recevez des notifications importantes et des rappels directement par email.</p>
+          </div>
+        </div>
+      </section>
+      {/* Expérience utilisateur sur tous les supports (duplicata) */}
+      <section className={styles.responsiveSection}>
+        <div className={styles.responsiveContent}>
+          <div className={styles.responsiveText}>
+            <h2>Expérience utilisateur sur tous les supports</h2>
+            <p>
+              L’interface est 100% responsive, optimisée pour mobile, tablette et desktop.<br/>
+              Les utilisateurs et admins bénéficient d’une expérience fluide sur tous les appareils.
+            </p>
+          </div>
+          <div className={styles.uxCarousel}>
+            <button className={styles.carouselArrow} onClick={handlePrevUx} aria-label="Précédent">
+              <FaChevronLeft />
+            </button>
+            <div className={styles.mockup}>
+              <img src={uxScreens[uxIndex].img} alt={uxScreens[uxIndex].title} />
+              <span>{uxScreens[uxIndex].title}</span>
+            </div>
+            <button className={styles.carouselArrow} onClick={handleNextUx} aria-label="Suivant">
+              <FaChevronRight />
+            </button>
           </div>
         </div>
       </section>
