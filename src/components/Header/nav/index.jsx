@@ -26,7 +26,7 @@ const navItems = [
   },
 ]
 
-export default function index() {
+export default function index({ closeMenu }) {
 
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
@@ -50,8 +50,9 @@ export default function index() {
                         key={index} 
                         data={{...data, index}} 
                         isActive={selectedIndicator == data.href} 
-                        setSelectedIndicator={setSelectedIndicator}>
-                        </Link>
+                        setSelectedIndicator={setSelectedIndicator}
+                        onNavigate={closeMenu}
+                        />
                       })
                     }
             </div>

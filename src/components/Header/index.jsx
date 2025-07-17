@@ -55,7 +55,7 @@ export default function index() {
             </Rounded>
         </div>
         <AnimatePresence mode="wait">
-            {isActive && <Nav />}
+            {isActive && <Nav closeMenu={() => setIsActive(false)} />}
         </AnimatePresence>
         </>
     )
