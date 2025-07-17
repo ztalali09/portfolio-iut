@@ -23,27 +23,25 @@ export default function index() {
             <div className={styles.logo}>
                 <p className={styles.copyright}>©</p>
                 <div className={styles.name}>
-                    <p className={styles.codeBy}>Code par</p>
-                    <p className={styles.dennis}>Zakaria</p>
-                    <p className={styles.snellenberg}>Talali</p>
+                    <p className={styles.codeBy}>Created & Curated by Zakaria Talali</p>
                 </div>
             </div>
             <div className={styles.nav}>
                 <Magnetic>
                     <div className={styles.el}>
-                        <a href="/projects">Projets</a>
+                        <a href="/projects">Work</a>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
                 <Magnetic>
                     <div className={styles.el}>
-                        <a href="/about">À propos</a>
+                        <a href="/about">About</a>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
                 <Magnetic>
                     <div className={styles.el}>
-                        <a href="/contact">Contact</a>
+                        <a href="/contact">Connect</a>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>

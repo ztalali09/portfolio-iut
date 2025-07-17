@@ -146,12 +146,12 @@ export default function ContactPage() {
             
             <div className={styles.container}>
                 <div className={styles.heroSection}>
-                    <h1>Créons Ensemble Quelque Chose d&apos;Extraordinaire</h1>
+                    <h1>Let’s Create Something Extraordinary Together</h1>
                 </div>
 
                 <div className={styles.contentGrid}>
                     <div className={styles.socialLinks}>
-                        <h3>Connectez-vous avec Moi</h3>
+                        <h3>Connect with Me</h3>
                         <div className={styles.linksGrid}>
                             <a href="https://www.linkedin.com/in/zakaria-talali-030a2334a/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
                                 <div className={styles.iconContainer}>
@@ -159,7 +159,7 @@ export default function ContactPage() {
                                 </div>
                                 <div className={styles.linkContent}>
                                     <span>LinkedIn</span>
-                                    <p>Connectez-vous professionnellement</p>
+                                    <p>Let’s connect professionally</p>
                                 </div>
                                 <div className={styles.arrow}>→</div>
                             </a>
@@ -170,7 +170,7 @@ export default function ContactPage() {
                                 </div>
                                 <div className={styles.linkContent}>
                                     <span>GitHub</span>
-                                    <p>Découvrez mes projets</p>
+                                    <p>Explore my code & projects</p>
                                 </div>
                                 <div className={styles.arrow}>→</div>
                             </a>
@@ -186,7 +186,7 @@ export default function ContactPage() {
                                 </div>
                                 <div className={styles.linkContent}>
                                     <span>Fiverr</span>
-                                    <p>Découvrez mes services</p>
+                                    <p>See my freelance services</p>
                                 </div>
                                 <div className={styles.arrow}>→</div>
                             </a>
@@ -202,7 +202,7 @@ export default function ContactPage() {
                                 </div>
                                 <div className={styles.linkContent}>
                                     <span>Upwork</span>
-                                    <p>Collaborez avec moi</p>
+                                    <p>Let’s collaborate</p>
                                 </div>
                                 <div className={styles.arrow}>→</div>
                             </a>
@@ -210,20 +210,20 @@ export default function ContactPage() {
                     </div>
 
                     <div className={styles.emailSection}>
-                        <h3>Contactez-moi</h3>
+                        <h3>Contact Me Directly</h3>
                         <div className={styles.emailContent}>
                             <div className={styles.emailDisplay}>
                                 <p className={styles.email}>{email}</p>
                                 <p className={styles.emailDescription}>
-                                    N'hésitez pas à me contacter pour discuter de vos projets ou opportunités.
+                                    Feel free to reach out to discuss your next project or collaboration opportunity.
                                 </p>
                             </div>
                             <div className={styles.emailButtons}>
                                 <a href={`mailto:${email}`} className={styles.emailButton}>
-                                    Envoyer un email
+                                    Send an Email
                                 </a>
                                 <button onClick={handleCopy} className={styles.copyButton}>
-                                    {copied ? 'Copié !' : "Copier l'adresse"}
+                                    {copied ? 'Copied!' : "Copy Address"}
                                 </button>
                             </div>
                         </div>
@@ -234,7 +234,7 @@ export default function ContactPage() {
             <div className={styles.footer}>
                 <div className={styles.footerContent}>
                     <div className={styles.footerInfo}>
-                        <p>Version 2025 © Édition</p>
+                        <p>Version 2025 © Edition</p>
                         <p>{currentTime} Paris</p>
                     </div>
                     <div className={styles.footerLinks}>

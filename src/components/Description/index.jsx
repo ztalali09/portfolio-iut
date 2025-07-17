@@ -5,7 +5,7 @@ import { slideUp, opacity } from './animation';
 import Rounded from '../../common/RoundedButton';
 export default function Description() {
 
-    const phrase = "Étudiant curieux et motivé, je construis pas à pas un parcours solide en informatique. Passionné par la technologie et le code, j'accorde autant d'importance à la compréhension qu'à la création.";
+    const phrase = "Relentlessly curious and driven, I’m forging a unique path in tech—blending deep understanding with creative execution.";
     const description = useRef(null);
     const isInView = useInView(description)
     return (
@@ -18,11 +18,11 @@ export default function Description() {
                     })
                 }
                 </p>
-                <motion.p variants={opacity} animate={isInView ? "open" : "closed"}>Je développe des solutions innovantes en explorant les technologies modernes et en créant des projets concrets.</motion.p>
+                <motion.p variants={opacity} animate={isInView ? "open" : "closed"}>I transform complex challenges into elegant, real-world digital solutions by leveraging the latest technologies and a passion for innovation.</motion.p>
                 <div data-scroll data-scroll-speed={0.1}>
                     <a href="/about" style={{ textDecoration: 'none', color: 'inherit' }}>
                         <Rounded className={styles.button}>
-                            <p>À propos de moi</p>
+                            <p>More About Me →</p>
                         </Rounded>
                     </a>
                 </div>
