@@ -117,174 +117,174 @@ export default function GamingZoneSystem() {
       <canvas ref={canvasRef} className={styles.backgroundCanvas} />
       <section className={styles.hero + ' ' + styles.gamingZoneHero}>
         <div className={styles.heroContent}>
-          <h3>Gaming Zone System — Plateforme de réservation modulaire & premium</h3>
-          <p>Solution clé en main pour la gestion de réservations, adaptable à tous les secteurs (gaming, hôtels, clubs, stades…)</p>
+          <h3>Gaming Zone System — Modular & Premium Booking Platform</h3>
+          <p>Turnkey solution for booking management, adaptable to all sectors (gaming, hotels, clubs, stadiums…)</p>
           <div className={styles.badges + ' badges'}>
             <span style={{ background: 'rgba(69,92,233,0.1)', color: '#455CE9', padding: '10px 22px', borderRadius: 20, fontWeight: 600, fontSize: '1.05rem' }}>Fullstack</span>
-            <span style={{ background: 'rgba(69,92,233,0.1)', color: '#455CE9', padding: '10px 22px', borderRadius: 20, fontWeight: 600, fontSize: '1.05rem' }}>Développé seul en 2 mois</span>
-            <span style={{ background: 'rgba(69,92,233,0.1)', color: '#455CE9', padding: '10px 22px', borderRadius: 20, fontWeight: 600, fontSize: '1.05rem' }}>Sécurité avancée</span>
-            <span style={{ background: 'rgba(69,92,233,0.1)', color: '#455CE9', padding: '10px 22px', borderRadius: 20, fontWeight: 600, fontSize: '1.05rem' }}>Adaptable à tout secteur</span>
+            <span style={{ background: 'rgba(69,92,233,0.1)', color: '#455CE9', padding: '10px 22px', borderRadius: 20, fontWeight: 600, fontSize: '1.05rem' }}>Developed solo in 2 months</span>
+            <span style={{ background: 'rgba(69,92,233,0.1)', color: '#455CE9', padding: '10px 22px', borderRadius: 20, fontWeight: 600, fontSize: '1.05rem' }}>Advanced security</span>
+            <span style={{ background: 'rgba(69,92,233,0.1)', color: '#455CE9', padding: '10px 22px', borderRadius: 20, fontWeight: 600, fontSize: '1.05rem' }}>Adaptable to any sector</span>
           </div>
         </div>
       </section>
-      {/* Résumé premium */}
+      {/* Premium Experience */}
       <section className={styles.premiumSummary}>
         <div className={styles.premiumSummaryContent}>
           <div className={styles.premiumSummaryImage}>
-            <img src="/images/pc-tele.png" alt="Résumé premium illustration" style={{ width: '130%', maxWidth: '800px', height: 'auto', borderRadius: 0, background: 'none', boxShadow: 'none' }} />
+            <img src="/images/pc-tele.png" alt="Premium summary illustration" style={{ width: '130%', maxWidth: '800px', height: 'auto', borderRadius: 0, background: 'none', boxShadow: 'none' }} />
           </div>
           <div className={styles.premiumSummaryText}>
-            <h2>L’Expérience Gaming Zone</h2>
+            <h2>The Gaming Zone Experience</h2>
             <div className={styles.premiumPitch}>
               <p>
-                Découvrez une plateforme de réservation et de gestion nouvelle génération, conçue pour offrir une expérience fluide, rapide et ultra-sécurisée.<br/>
-                Gaming Zone System s’adapte à tous les univers : gaming, sport, hôtellerie, coworking et bien plus. Offrez à vos clients une interface élégante, des fonctionnalités sur-mesure et une performance sans compromis.<br/>
-                Transformez la gestion de vos réservations en un véritable atout business, et démarquez-vous par l’innovation et la simplicité.
+                Discover a next-generation booking and management platform, designed to deliver a smooth, fast, and ultra-secure experience.<br/>
+                Gaming Zone System adapts to every universe: gaming, sports, hospitality, coworking, and more. Offer your clients an elegant interface, tailor-made features, and uncompromising performance.<br/>
+                Turn your booking management into a true business asset, and stand out through innovation and simplicity.
               </p>
             </div>
           </div>
         </div>
       </section>
-      {/* Fonctionnalités clés */}
+      {/* Features Overview */}
       <section className={styles.featuresSection}>
-        <h2>Aperçu des fonctionnalités</h2>
+        <h2>Features Overview</h2>
         <div className={styles.featuresGrid}>
-          {/* 1. Inscription */}
+          {/* 1. Sign Up */}
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}><MdPerson size={48} color="#455CE9" /></div>
             <div style={{textAlign: 'center'}}>
-              <h3>Inscription rapide</h3>
-              <p>Créez un compte en quelques secondes pour accéder à la plateforme Gaming Zone.</p>
+              <h3>Quick Sign Up</h3>
+              <p>Create an account in seconds to access the Gaming Zone platform.</p>
             </div>
           </div>
-          {/* 2. Connexion */}
+          {/* 2. Login */}
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}><MdLock size={48} color="#455CE9" /></div>
             <div style={{textAlign: 'center'}}>
-              <h3>Connexion sécurisée</h3>
-              <p>Authentification moderne avec reCAPTCHA et gestion des accès sécurisés.</p>
+              <h3>Secure Login</h3>
+              <p>Modern authentication with reCAPTCHA and secure access management.</p>
             </div>
           </div>
-          {/* 3. Accueil */}
+          {/* 3. Dashboard */}
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}><MdDashboard size={48} color="#455CE9" /></div>
             <div style={{textAlign: 'center'}}>
-              <h3>Accueil personnalisé</h3>
-              <p>Retrouvez toutes vos actions principales dès l’arrivée sur la plateforme.</p>
+              <h3>Personalized Dashboard</h3>
+              <p>Find all your main actions as soon as you arrive on the platform.</p>
             </div>
           </div>
-          {/* 4. Choix équipement */}
+          {/* 4. Equipment Selection */}
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}><MdDevices size={48} color="#455CE9" /></div>
             <div style={{textAlign: 'center'}}>
-              <h3>Choix de l’équipement</h3>
-              <p>Sélectionnez la console ou le PC gaming de votre choix selon les disponibilités.</p>
+              <h3>Equipment Selection</h3>
+              <p>Choose your console or gaming PC based on real-time availability.</p>
             </div>
           </div>
-          {/* 5. Sélection créneau */}
+          {/* 5. Time Slot Booking */}
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}><MdEventAvailable size={48} color="#455CE9" /></div>
             <div style={{textAlign: 'center'}}>
-              <h3>Réservation de créneau</h3>
-              <p>Réservez un créneau horaire précis et visualisez les postes disponibles en temps réel.</p>
+              <h3>Time Slot Booking</h3>
+              <p>Book a specific time slot and see available stations in real time.</p>
             </div>
           </div>
-          {/* 6. Mode de paiement */}
+          {/* 6. Payment Options */}
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}><MdCreditCard size={48} color="#455CE9" /></div>
             <div style={{textAlign: 'center'}}>
-              <h3>Choix du paiement</h3>
-              <p>Paiement en ligne ou sur place, selon votre préférence et votre confort.</p>
+              <h3>Payment Options</h3>
+              <p>Pay online or on-site, according to your preference and comfort.</p>
             </div>
           </div>
-          {/* 7. Résumé de commande */}
+          {/* 7. Order Summary */}
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}><MdDescription size={48} color="#455CE9" /></div>
             <div style={{textAlign: 'center'}}>
-              <h3>Résumé de la commande</h3>
-              <p>Vérifiez tous les détails de votre réservation avant validation finale.</p>
+              <h3>Order Summary</h3>
+              <p>Check all your booking details before final validation.</p>
             </div>
           </div>
-          {/* 8. Confirmation finale */}
+          {/* 8. Instant Confirmation */}
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}><MdCheckCircle size={48} color="#455CE9" /></div>
             <div style={{textAlign: 'center'}}>
-              <h3>Confirmation instantanée</h3>
-              <p>Recevez une confirmation claire à l’écran et par email après chaque réservation.</p>
+              <h3>Instant Confirmation</h3>
+              <p>Receive clear confirmation on screen and by email after each booking.</p>
             </div>
           </div>
-          {/* 9. Historique */}
+          {/* 9. Booking History */}
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}><MdHistory size={48} color="#455CE9" /></div>
             <div style={{textAlign: 'center'}}>
-              <h3>Historique des réservations</h3>
-              <p>Consultez l’historique complet de vos réservations passées et à venir.</p>
+              <h3>Booking History</h3>
+              <p>View your complete history of past and upcoming bookings.</p>
             </div>
           </div>
-          {/* 10. Mon compte */}
+          {/* 10. Account Management */}
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}><MdPerson size={48} color="#455CE9" /></div>
             <div style={{textAlign: 'center'}}>
-              <h3>Gestion du compte</h3>
-              <p>Modifiez vos informations personnelles, préférences et suivez vos succès.</p>
+              <h3>Account Management</h3>
+              <p>Edit your personal information, preferences, and track your achievements.</p>
             </div>
           </div>
-          {/* 11. Statistiques */}
+          {/* 11. Detailed Statistics */}
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}><MdTrendingUp size={48} color="#455CE9" /></div>
             <div style={{textAlign: 'center'}}>
-              <h3>Statistiques détaillées</h3>
-              <p>Visualisez vos statistiques d’utilisation et vos habitudes de réservation.</p>
+              <h3>Detailed Statistics</h3>
+              <p>View your usage statistics and booking habits.</p>
             </div>
           </div>
-          {/* 12. Points & Fidélisation */}
+          {/* 12. Player Points & Levels */}
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}><MdStar size={48} color="#455CE9" /></div>
             <div style={{textAlign: 'center'}}>
-              <h3>Points & Niveaux Joueur</h3>
-              <p>Progressez en tant que joueur : gagnez des points à chaque réservation, débloquez des niveaux et profitez d’avantages exclusifs pour les membres les plus fidèles de la plateforme.</p>
+              <h3>Player Points & Levels</h3>
+              <p>Level up as a player: earn points with each booking, unlock new levels, and enjoy exclusive benefits for the most loyal members.</p>
             </div>
           </div>
         </div>
       </section>
-      {/* Expérience utilisateur sur tous les supports (duplicata) */}
+      {/* User Experience on All Devices */}
       <section className={styles.responsiveSection}>
         <div className={styles.responsiveContent}>
           <div className={styles.responsiveText}>
-            <h2>Expérience utilisateur sur tous les supports</h2>
+            <h2>User Experience on All Devices</h2>
             <p>
-              Une expérience pensée d’abord pour le mobile : chaque page, chaque fonctionnalité s’adapte parfaitement à votre smartphone.<br/>
-              Profitez d’une interface moderne, intuitive et réactive, que vous soyez sur téléphone, tablette ou ordinateur.<br/>
-              Joueurs comme administrateurs bénéficient d’un confort d’utilisation optimal, partout et à tout moment.
+              A mobile-first experience: every page and feature adapts perfectly to your smartphone.<br/>
+              Enjoy a modern, intuitive, and responsive interface, whether on phone, tablet, or computer.<br/>
+              Both players and admins benefit from optimal comfort, anywhere, anytime.
             </p>
           </div>
           <div className={styles.uxCarousel}>
-            <button className={styles.carouselArrow} onClick={handlePrevUx} aria-label="Précédent">
+            <button className={styles.carouselArrow} onClick={handlePrevUx} aria-label="Previous">
               <FaChevronLeft />
             </button>
             <div className={styles.mockup}>
-              <img src={uxScreens[uxIndex].img} alt="Aperçu expérience utilisateur" />
+              <img src={uxScreens[uxIndex].img} alt="User experience preview" />
             </div>
-            <button className={styles.carouselArrow} onClick={handleNextUx} aria-label="Suivant">
+            <button className={styles.carouselArrow} onClick={handleNextUx} aria-label="Next">
               <FaChevronRight />
             </button>
           </div>
         </div>
       </section>
-      {/* Backend robuste et sécurisé */}
+      {/* Robust & Secure Backend */}
       <section className={styles.backendSection}>
         <div className={styles.backendContent}>
           <div className={styles.backendText}>
-            <h2>Backend robuste et sécurisé</h2>
+            <h2>Robust & Secure Backend</h2>
             <p>
-              Backend Python/Flask modulaire, sécurisé, documenté.<br/>
-              Gestion des sessions, sécurité, notifications, emails, logique métier complexe.
+              Modular, secure, and documented Python/Flask backend.<br/>
+              Session management, security, notifications, emails, complex business logic.
             </p>
             <ul className={styles.backendPoints}>
-              <li>Authentification sécurisée</li>
+              <li>Secure authentication</li>
               <li>reCAPTCHA</li>
-              <li>Séparation admin</li>
-              <li>Tests automatisés</li>
+              <li>Admin separation</li>
+              <li>Automated tests</li>
               <li>Logs</li>
             </ul>
           </div>
@@ -299,13 +299,13 @@ export default function GamingZoneSystem() {
           </div>
         </div>
       </section>
-      {/* Adaptabilité sectorielle */}
+      {/* Sector Adaptability */}
       <section className={styles.sectorSection}>
         <div className={styles.sectorContent}>
-          <h2>Adaptabilité sectorielle</h2>
+          <h2>Sector Adaptability</h2>
           <p>
-            Adaptable à : gaming centers, hôtels, clubs de sport, stades, coworking, etc.<br/>
-            Chaque ressource (chambre, terrain, salle, équipement) peut être gérée par le même système.
+            Adaptable to: gaming centers, hotels, sports clubs, stadiums, coworking, etc.<br/>
+            Every resource (room, field, hall, equipment) can be managed by the same system.
           </p>
           <div className={styles.sectorGrid}>
             <div className={styles.sectorItem}>
@@ -314,15 +314,15 @@ export default function GamingZoneSystem() {
             </div>
             <div className={styles.sectorItem}>
               <MdHotel size={48} color="#455CE9" />
-              <span>Hôtel</span>
+              <span>Hotel</span>
             </div>
             <div className={styles.sectorItem}>
               <MdSportsSoccer size={48} color="#455CE9" />
-              <span>Club de sport</span>
+              <span>Sports club</span>
             </div>
             <div className={styles.sectorItem}>
               <MdStadium size={48} color="#455CE9" />
-              <span>Stade</span>
+              <span>Stadium</span>
             </div>
             <div className={styles.sectorItem}>
               <MdMeetingRoom size={48} color="#455CE9" />
@@ -331,36 +331,36 @@ export default function GamingZoneSystem() {
           </div>
         </div>
       </section>
-      {/* Scalabilité et gestion avancée */}
+      {/* Scalability & Advanced Management */}
       <section className={styles.scalabilitySection}>
         <div className={styles.scalabilityContent}>
-          <h2>Scalabilité et gestion avancée</h2>
+          <h2>Scalability & Advanced Management</h2>
           <p>
-            Gestion multi-utilisateurs, multi-ressources, multi-roles.<br/>
-            Système prêt à évoluer pour gérer plus de clients, de ressources, ou de fonctionnalités.
+            Multi-user, multi-resource, multi-role management.<br/>
+            A system ready to scale for more clients, resources, or features.
           </p>
           <div className={styles.scalabilityCarousel}>
-            <button className={styles.carouselArrow} aria-label="Précédent" style={{visibility: 'hidden'}}>&lt;</button>
+            <button className={styles.carouselArrow} aria-label="Previous" style={{visibility: 'hidden'}}>&lt;</button>
             <div className={styles.scalabilityMockup}>
               <MdAdminPanelSettings size={48} color="#455CE9" />
-              <span>Gestion des rôles dans l’admin</span>
+              <span>Role management in admin</span>
             </div>
             <div className={styles.scalabilityMockup}>
               <MdHistory size={48} color="#455CE9" />
-              <span>Historique multi-utilisateurs</span>
+              <span>Multi-user history</span>
             </div>
             <div className={styles.scalabilityMockup}>
               <MdCategory size={48} color="#455CE9" />
-              <span>Sélection de différents types de ressources</span>
+              <span>Selection of different resource types</span>
             </div>
-            <button className={styles.carouselArrow} aria-label="Suivant" style={{visibility: 'hidden'}}>&gt;</button>
+            <button className={styles.carouselArrow} aria-label="Next" style={{visibility: 'hidden'}}>&gt;</button>
           </div>
         </div>
       </section>
-      {/* Technologies utilisées */}
+      {/* Technologies Used */}
       <section className={styles.techSummarySection}>
         <div className={styles.techSummaryContent}>
-          <h2>Technologies utilisées</h2>
+          <h2>Technologies Used</h2>
           <div className={styles.techGrid}>
             <div>
               <div className={styles.techIcon}><MdWeb size={36} color="#455CE9" /></div>
@@ -370,7 +370,7 @@ export default function GamingZoneSystem() {
                 <li>TypeScript</li>
                 <li>Tailwind CSS</li>
                 <li>Radix UI</li>
-                <li>Lucide React (icônes)</li>
+                <li>Lucide React (icons)</li>
                 <li>React Google reCAPTCHA</li>
               </ul>
             </div>
@@ -391,7 +391,7 @@ export default function GamingZoneSystem() {
               <div className={styles.techIcon}><MdStorage size={36} color="#455CE9" /></div>
               <h3>Database</h3>
               <ul>
-                <li>MySQL (schéma relationnel avancé)</li>
+                <li>MySQL (advanced relational schema)</li>
               </ul>
             </div>
             <div>
@@ -402,7 +402,7 @@ export default function GamingZoneSystem() {
                 <li>pnpm / npm</li>
                 <li>Git & GitHub</li>
                 <li>Markdown</li>
-                <li>Docker (optionnel)</li>
+                <li>Docker (optional)</li>
               </ul>
             </div>
           </div>
@@ -428,7 +428,7 @@ export default function GamingZoneSystem() {
           </ul>
         </div>
       </section>
-      {/* Section Contact déplacée en bas */}
+      {/* Contact Section moved to bottom */}
       <section className={styles.cta}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
