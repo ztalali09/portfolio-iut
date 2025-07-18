@@ -2,8 +2,8 @@ export const projects = [
   {
     id: 5,
     title: "Gaming Zone System — Modular & Premium Booking Platform",
-    thumbnailImage: "/images/blank.png",
-    mainImage: "/images/blank.png",
+    thumbnailImage: "/images/gaming-zone.png",
+    mainImage: "/images/gaming-zone.png",
     color: "#455CE9",
     description: "A turnkey solution for reservation management, adaptable to any sector (gaming, hotels, clubs, stadiums…).",
     context: "Solo-developed in 1.5 months — fullstack, secure, and highly adaptable.",

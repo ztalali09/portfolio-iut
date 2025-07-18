@@ -9,6 +9,21 @@ import Rounded from '../../common/RoundedButton';
 
 const projects = [
   {
+    title: "Gaming Zone System",
+    src: "gaming-zone.png",
+    color: "#455CE9",
+    description: "A modular, premium booking platform for gaming centers and beyond. Mobile-first, secure, and fully customizable.",
+    context: "Solo project — fullstack, advanced security, adaptable to any sector.",
+    technologies: ["Next.js", "Flask", "MySQL", "Tailwind CSS"],
+    features: [
+      "Real-time booking",
+      "Admin dashboard",
+      "User profiles",
+      "Mobile-first design"
+    ],
+    mainImage: "/images/gaming-zone.png"
+  },
+  {
     title: "Techmobile",
     src: "telephones.jpg",
     color: "#000000",
