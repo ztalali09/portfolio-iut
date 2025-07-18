@@ -224,11 +224,11 @@ export default function AboutPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                Salut, je suis <motion.span 
+                Hi, I’m <motion.span 
                   className={styles.highlight}
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >Talali Zakaria</motion.span>
+                >Zakaria Talali</motion.span>
               </motion.h1>
 
               <motion.p 
@@ -237,7 +237,7 @@ export default function AboutPage() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
               >
-                Étudiant en développement web & Créateur d&apos;expériences digitales
+                Web Developer & Digital Experience Creator — passionate about building seamless, impactful solutions at the intersection of technology and creativity.
               </motion.p>
 
               <motion.div 
@@ -298,7 +298,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                Mon Profil
+                My Profile
               </motion.h2>
 
               <motion.div 
@@ -314,28 +314,28 @@ export default function AboutPage() {
                   variants={containerVariants}
                 >
                   <motion.div className={styles.infoCard} variants={cardVariants} whileHover="hover">
-                    <h3><FaUser /> Informations Personnelles</h3>
+                    <h3><FaUser /> Personal Information</h3>
                     <ul>
-                      <li><FaMapMarkerAlt /> {personalInfo.location}</li>
-                      <li><FaEnvelope /> {personalInfo.email}</li>
-                      <li><FaPhone /> {personalInfo.phone}</li>
-                      <li><FaCalendarAlt /> {personalInfo.birthDate}</li>
+                      <li><FaMapMarkerAlt /> Belfort, France</li>
+                      <li><FaEnvelope /> talalizakariapro@gmail.com</li>
+                      <li><FaPhone /> +33 6 35 34 22 71</li>
+                      <li><FaCalendarAlt /> 18 years old</li>
                     </ul>
                   </motion.div>
 
                   <motion.div className={styles.infoCard} variants={cardVariants} whileHover="hover">
-                    <h3><FaGraduationCap /> Formation</h3>
+                    <h3><FaGraduationCap /> Education</h3>
                     <ul>
-                      <li><strong>{personalInfo.formation}</strong></li>
-                      <li>{personalInfo.institution}</li>
+                      <li><strong>BUT Computer Science – 1st Year</strong></li>
+                      <li>IUT Marie and Louis Pasteur, Belfort</li>
                     </ul>
                   </motion.div>
 
                   <motion.div className={styles.infoCard} variants={cardVariants} whileHover="hover">
-                    <h3><FaCode /> Compétences Techniques</h3>
+                    <h3><FaCode /> Technical Skills</h3>
                     <div className={styles.skillsList}>
                       <div>
-                        <h4>Langages</h4>
+                        <h4>Languages</h4>
                         <ul>
                           {technicalSkills.languages.map((skill, index) => (
                             <li key={index}>{skill}</li>
@@ -343,7 +343,7 @@ export default function AboutPage() {
                         </ul>
                       </div>
                       <div>
-                        <h4>Frameworks & Outils</h4>
+                        <h4>Frameworks & Tools</h4>
                         <ul>
                           {technicalSkills.frameworks.map((skill, index) => (
                             <li key={index}>{skill}</li>
@@ -354,7 +354,7 @@ export default function AboutPage() {
                         </ul>
                       </div>
                       <div>
-                        <h4>Bases de données</h4>
+                        <h4>Databases</h4>
                         <ul>
                           {technicalSkills.databases.map((skill, index) => (
                             <li key={index}>{skill}</li>
@@ -362,7 +362,7 @@ export default function AboutPage() {
                         </ul>
                       </div>
                       <div>
-                        <h4>Autres</h4>
+                        <h4>Other</h4>
                         <ul>
                           {technicalSkills.other.map((skill, index) => (
                             <li key={index}>{skill}</li>
@@ -373,11 +373,17 @@ export default function AboutPage() {
                   </motion.div>
 
                   <motion.div className={styles.infoCard} variants={cardVariants} whileHover="hover">
-                    <h3><FaBook /> Cours Suivis</h3>
+                    <h3><FaBook /> Courses</h3>
                     <ul className={styles.coursesList}>
-                      {courses.map((course, index) => (
-                        <li key={index}>{course}</li>
-                      ))}
+                      <li>Object-Oriented Programming (Java)</li>
+                      <li>Web Development (HTML, CSS, JS, Flask, Python)</li>
+                      <li>UI Development (JavaFX)</li>
+                      <li>Database Modeling & Management</li>
+                      <li>Network Services Installation</li>
+                      <li>Operating Systems (Linux)</li>
+                      <li>Discrete Mathematics (Logic, Graphs, Sets)</li>
+                      <li>Project Management, Professional Communication</li>
+                      <li>Digital Law, Economic & Ecological Environment</li>
                     </ul>
                   </motion.div>
                 </motion.div>
@@ -387,22 +393,31 @@ export default function AboutPage() {
                   className={styles.languages}
                   variants={containerVariants}
                 >
-                  <h3><FaLanguage /> Langues</h3>
+                  <h3><FaLanguage /> Languages</h3>
                   <motion.div 
                     className={styles.languageGrid}
                     variants={containerVariants}
                   >
-                    {personalInfo.languages.map((lang, index) => (
-                      <motion.div 
-                        key={index}
-                        className={styles.languageItem}
-                        variants={cardVariants}
-                        whileHover="hover"
-                      >
-                        <h4>{lang.name}</h4>
-                        <span>{lang.level}</span>
-                      </motion.div>
-                    ))}
+                    <motion.div className={styles.languageItem} variants={cardVariants} whileHover="hover">
+                      <h4>Arabic</h4>
+                      <span>Native</span>
+                    </motion.div>
+                    <motion.div className={styles.languageItem} variants={cardVariants} whileHover="hover">
+                      <h4>French</h4>
+                      <span>Native</span>
+                    </motion.div>
+                    <motion.div className={styles.languageItem} variants={cardVariants} whileHover="hover">
+                      <h4>English</h4>
+                      <span>Upper-Intermediate (B2/C1)</span>
+                    </motion.div>
+                    <motion.div className={styles.languageItem} variants={cardVariants} whileHover="hover">
+                      <h4>Spanish</h4>
+                      <span>Beginner (A1)</span>
+                    </motion.div>
+                    <motion.div className={styles.languageItem} variants={cardVariants} whileHover="hover">
+                      <h4>Chinese</h4>
+                      <span>Beginner (A1)</span>
+                    </motion.div>
                   </motion.div>
                 </motion.div>
               </motion.div>
@@ -418,22 +433,20 @@ export default function AboutPage() {
             viewport={{ once: true }}
           >
             <div className={styles.container}>
-              <h2 className={styles.sectionTitle}>Mon Parcours</h2>
+              <h2 className={styles.sectionTitle}>My Journey</h2>
               <div className={styles.storyContent}>
                 <div className={styles.storyCard}>
                   <p>
-                    Étudiant en BUT Informatique à l'IUT de Belfort, je combine une formation solide avec une passion pour le développement. 
-                    Mon parcours international et ma maîtrise de plusieurs langues enrichissent ma perspective sur le développement logiciel. 
-                    Je m'efforce de créer des solutions innovantes tout en maintenant une approche rigoureuse et méthodique.
+                    As a Computer Science student at IUT Belfort, I blend a strong academic foundation with a passion for development. My international background and fluency in multiple languages enrich my perspective on software creation. I strive to deliver innovative solutions with a rigorous and methodical approach.
                   </p>
                   <div className={styles.storyStats}>
                     <div className={styles.stat}>
                       <span className={styles.statNumber}>5+</span>
-                      <span className={styles.statLabel}>Langues</span>
+                      <span className={styles.statLabel}>Languages</span>
                     </div>
                     <div className={styles.stat}>
                       <span className={styles.statNumber}>3+</span>
-                      <span className={styles.statLabel}>Projets Académiques</span>
+                      <span className={styles.statLabel}>Academic Projects</span>
                     </div>
                     <div className={styles.stat}>
                       <span className={styles.statNumber}>100%</span>
@@ -444,10 +457,10 @@ export default function AboutPage() {
                 <div className={styles.personalityCard}>
                   <h3>Soft Skills</h3>
                   <ul>
-                    <li><FaUserCheck /> Autonomie et rigueur</li>
-                    <li><FaBrain /> Curiosité et envie d'apprendre</li>
-                    <li><FaUsers /> Esprit d'équipe</li>
-                    <li><FaSmile /> Énergie positive</li>
+                    <li><FaUserCheck /> Autonomy & Precision</li>
+                    <li><FaBrain /> Curiosity & Eagerness to Learn</li>
+                    <li><FaUsers /> Team Spirit</li>
+                    <li><FaSmile /> Positive Energy</li>
                   </ul>
                 </div>
               </div>
@@ -463,30 +476,30 @@ export default function AboutPage() {
             viewport={{ once: true }}
           >
             <div className={styles.container}>
-              <h2 className={styles.sectionTitle}>Mes Ambitions</h2>
+              <h2 className={styles.sectionTitle}>My Ambitions</h2>
               <div className={styles.goalsContent}>
                 <div className={styles.goalCard}>
-                  <h3>Court Terme</h3>
+                  <h3>Short Term</h3>
                   <ul>
-                    <li>Maîtriser Next.js 14</li>
-                    <li>Contribuer à des projets open source</li>
-                    <li>Développer mes compétences en UI/UX</li>
+                    <li>Master Next.js 14</li>
+                    <li>Contribute to open source projects</li>
+                    <li>Sharpen my UI/UX skills</li>
                   </ul>
                 </div>
                 <div className={styles.goalCard}>
-                  <h3>Moyen Terme</h3>
+                  <h3>Mid Term</h3>
                   <ul>
-                    <li>Obtenir une certification AWS</li>
-                    <li>Créer une application web complète</li>
-                    <li>Participer à des hackathons</li>
+                    <li>Earn an AWS certification</li>
+                    <li>Build a full-featured web application</li>
+                    <li>Participate in hackathons</li>
                   </ul>
                 </div>
                 <div className={styles.goalCard}>
-                  <h3>Long Terme</h3>
+                  <h3>Long Term</h3>
                   <ul>
-                    <li>Devenir un développeur full-stack senior</li>
-                    <li>Mentorer d'autres développeurs</li>
-                    <li>Lancer mon propre projet</li>
+                    <li>Become a senior full-stack developer</li>
+                    <li>Mentor other developers</li>
+                    <li>Launch my own project</li>
                   </ul>
                 </div>
               </div>
@@ -498,18 +511,13 @@ export default function AboutPage() {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className={styles.ctaContent}
         >
-              <h2 className={styles.sectionTitle}>Travaillons Ensemble</h2>
-          <p>Je suis toujours ouvert à de nouvelles opportunités d'apprentissage et de collaboration.</p>
-          <div className={styles.ctaButtons}>
-            <a href="/contact" className={styles.primaryButton}>Me contacter</a>
-            <a href="https://github.com/ztalali09" target="_blank" rel="noopener noreferrer" className={styles.secondaryButton}>
-              <FaGithub /> Voir mes projets
-            </a>
-          </div>
+          <h2>Let’s Work Together</h2>
+          <p>Interested in collaborating, discussing an opportunity, or just connecting? Feel free to reach out!</p>
+          <a href="/contact" className={styles.ctaButton}>Contact</a>
         </motion.div>
       </section>
 

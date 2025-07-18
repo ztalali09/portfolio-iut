@@ -41,13 +41,13 @@ export default function Contact() {
                             alt="background"
                             />
                         </div>
-                        <h2>Travaillons</h2>
+                        <h2>Let’s Build Something Great</h2>
                     </span>
-                    <h2>ensemble</h2>
+                    <h2></h2>
                     <motion.div style={{x}} className={styles.buttonContainer}>
                         <Link href="/contact">
                             <Rounded backgroundColor={"#334BD3"} className={styles.button}>
-                                <p>Me contacter</p>
+                                <p>Start a Conversation</p>
                             </Rounded>
                         </Link>
                     </motion.div>
@@ -71,16 +71,16 @@ export default function Contact() {
                     <div>
                         <span>
                             <h3>Version</h3>
-                            <p>2025 © Édition</p>
+                            <p>2025 © Edition</p>
                         </span>
                         <span>
-                            <h3>Heure</h3>
+                            <h3>Local Time</h3>
                             <p>{currentTime} Paris</p>
                         </span>
                     </div>
                     <div>
                         <span>
-                            <h3>réseaux sociaux</h3>
+                            <h3>Connect</h3>
                             <Magnetic>
                                 <a href="https://www.linkedin.com/in/zakaria-talali-030a2334a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                             </Magnetic>

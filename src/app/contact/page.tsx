@@ -14,40 +14,43 @@ export default function ContactPage() {
     const canvasRef = useRef(null);
     const email = 'talalizakariapro@gmail.com';
 
-    // Variables pour l'animation Three.js
-    let scene, camera, renderer, particles;
-    let targetX = 0;
-    let targetY = 0;
-    let windowHalfX = 0;
-    let windowHalfY = 0;
+    // Variables pour l'animation Three.js - using useRef to preserve values
+    const sceneRef = useRef(null);
+    const cameraRef = useRef(null);
+    const rendererRef = useRef(null);
+    const particlesRef = useRef(null);
+    const targetXRef = useRef(0);
+    const targetYRef = useRef(0);
+    const windowHalfXRef = useRef(0);
+    const windowHalfYRef = useRef(0);
 
     // Gestion du mouvement de la souris
     const handleMouseMove = (event) => {
-        windowHalfX = window.innerWidth / 2;
-        windowHalfY = window.innerHeight / 2;
+        windowHalfXRef.current = window.innerWidth / 2;
+        windowHalfYRef.current = window.innerHeight / 2;
         
-        targetX = (event.clientX - windowHalfX) * 0.001;
-        targetY = (event.clientY - windowHalfY) * 0.001;
+        targetXRef.current = (event.clientX - windowHalfXRef.current) * 0.001;
+        targetYRef.current = (event.clientY - windowHalfYRef.current) * 0.001;
     };
 
     useEffect(() => {
         if (!canvasRef.current) return;
 
         // Initialisation de la scène
-        scene = new THREE.Scene();
-        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        renderer = new THREE.WebGLRenderer({ 
+        sceneRef.current = new THREE.Scene();
+        cameraRef.current = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        rendererRef.current = new THREE.WebGLRenderer({ 
             canvas: canvasRef.current,
             alpha: true,
             antialias: true 
         });
 
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        rendererRef.current.setSize(window.innerWidth, window.innerHeight);
+        rendererRef.current.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
         // Création des particules
         const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCount = 2000;
+        const particlesCount = 1000;
         const posArray = new Float32Array(particlesCount * 3);
 
         for(let i = 0; i < particlesCount * 3; i++) {
@@ -63,39 +66,43 @@ export default function ContactPage() {
             blending: THREE.AdditiveBlending // Ajout d'un effet de lueur
         });
 
-        particles = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particles);
+        particlesRef.current = new THREE.Points(particlesGeometry, particlesMaterial);
+        sceneRef.current.add(particlesRef.current);
 
-        camera.position.z = 2;
+        cameraRef.current.position.z = 2;
 
         // Animation
         const animate = () => {
             requestAnimationFrame(animate);
             
-            if (particles) {
+            if (particlesRef.current) {
                 // Rotation de base
-                particles.rotation.x += 0.002;
-                particles.rotation.y += 0.002;
+                particlesRef.current.rotation.x += 0.002;
+                particlesRef.current.rotation.y += 0.002;
                 
                 // Rotation basée sur la position de la souris
-                particles.rotation.x += 0.08 * (targetY - particles.rotation.x);
-                particles.rotation.y += 0.08 * (targetX - particles.rotation.y);
+                particlesRef.current.rotation.x += 0.08 * (targetYRef.current - particlesRef.current.rotation.x);
+                particlesRef.current.rotation.y += 0.08 * (targetXRef.current - particlesRef.current.rotation.y);
 
                 // Animation de flottement
                 const time = Date.now() * 0.0002;
-                particles.position.y = Math.sin(time) * 0.1;
+                particlesRef.current.position.y = Math.sin(time) * 0.1;
             }
             
-            renderer.render(scene, camera);
+            if (rendererRef.current && sceneRef.current && cameraRef.current) {
+                rendererRef.current.render(sceneRef.current, cameraRef.current);
+            }
         };
 
         animate();
 
         // Gestion du redimensionnement
         const handleResize = () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            if (cameraRef.current && rendererRef.current) {
+                cameraRef.current.aspect = window.innerWidth / window.innerHeight;
+                cameraRef.current.updateProjectionMatrix();
+                rendererRef.current.setSize(window.innerWidth, window.innerHeight);
+            }
         };
 
         window.addEventListener('resize', handleResize);
@@ -105,12 +112,12 @@ export default function ContactPage() {
         return () => {
             window.removeEventListener('resize', handleResize);
             window.removeEventListener('mousemove', handleMouseMove);
-            if (renderer) {
-                renderer.dispose();
+            if (rendererRef.current) {
+                rendererRef.current.dispose();
             }
-            if (particles) {
-                particles.geometry.dispose();
-                particles.material.dispose();
+            if (particlesRef.current) {
+                particlesRef.current.geometry.dispose();
+                particlesRef.current.material.dispose();
             }
         };
     }, []);
@@ -139,12 +146,12 @@ export default function ContactPage() {
             
             <div className={styles.container}>
                 <div className={styles.heroSection}>
-                    <h1>Créons Ensemble Quelque Chose d'Extraordinaire</h1>
+                    <h1>Let’s Create Something Extraordinary Together</h1>
                 </div>
 
                 <div className={styles.contentGrid}>
                     <div className={styles.socialLinks}>
-                        <h3>Connectez-vous avec Moi</h3>
+                        <h3>Connect with Me</h3>
                         <div className={styles.linksGrid}>
                             <a href="https://www.linkedin.com/in/zakaria-talali-030a2334a/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
                                 <div className={styles.iconContainer}>
@@ -152,7 +159,7 @@ export default function ContactPage() {
                                 </div>
                                 <div className={styles.linkContent}>
                                     <span>LinkedIn</span>
-                                    <p>Connectez-vous professionnellement</p>
+                                    <p>Let’s connect professionally</p>
                                 </div>
                                 <div className={styles.arrow}>→</div>
                             </a>
@@ -163,7 +170,7 @@ export default function ContactPage() {
                                 </div>
                                 <div className={styles.linkContent}>
                                     <span>GitHub</span>
-                                    <p>Découvrez mes projets</p>
+                                    <p>Explore my code & projects</p>
                                 </div>
                                 <div className={styles.arrow}>→</div>
                             </a>
@@ -179,7 +186,7 @@ export default function ContactPage() {
                                 </div>
                                 <div className={styles.linkContent}>
                                     <span>Fiverr</span>
-                                    <p>Découvrez mes services</p>
+                                    <p>See my freelance services</p>
                                 </div>
                                 <div className={styles.arrow}>→</div>
                             </a>
@@ -195,7 +202,7 @@ export default function ContactPage() {
                                 </div>
                                 <div className={styles.linkContent}>
                                     <span>Upwork</span>
-                                    <p>Collaborez avec moi</p>
+                                    <p>Let’s collaborate</p>
                                 </div>
                                 <div className={styles.arrow}>→</div>
                             </a>
@@ -203,20 +210,20 @@ export default function ContactPage() {
                     </div>
 
                     <div className={styles.emailSection}>
-                        <h3>Contactez-moi</h3>
+                        <h3>Contact Me Directly</h3>
                         <div className={styles.emailContent}>
                             <div className={styles.emailDisplay}>
                                 <p className={styles.email}>{email}</p>
                                 <p className={styles.emailDescription}>
-                                    N'hésitez pas à me contacter pour discuter de vos projets ou opportunités.
+                                    Feel free to reach out to discuss your next project or collaboration opportunity.
                                 </p>
                             </div>
                             <div className={styles.emailButtons}>
                                 <a href={`mailto:${email}`} className={styles.emailButton}>
-                                    Envoyer un email
+                                    Send an Email
                                 </a>
                                 <button onClick={handleCopy} className={styles.copyButton}>
-                                    {copied ? 'Copié !' : 'Copier l\'adresse'}
+                                    {copied ? 'Copied!' : "Copy Address"}
                                 </button>
                             </div>
                         </div>
@@ -227,8 +234,8 @@ export default function ContactPage() {
             <div className={styles.footer}>
                 <div className={styles.footerContent}>
                     <div className={styles.footerInfo}>
-                        <p>Version 2025 © Édition</p>
-                        <p>{new Date().toLocaleTimeString('fr-FR', { timeZone: 'Europe/Paris' })} Paris</p>
+                        <p>Version 2025 © Edition</p>
+                        <p>{currentTime} Paris</p>
                     </div>
                     <div className={styles.footerLinks}>
                         <a href="https://www.linkedin.com/in/zakaria-talali-030a2334a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -240,4 +247,4 @@ export default function ContactPage() {
             </div>
         </div>
     );
-} 
+}

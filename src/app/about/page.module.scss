@@ -586,16 +586,24 @@
 
   // CTA Section
   .cta {
-    background: linear-gradient(45deg, #455CE9, #2d3436);
-    padding: 100px 40px;
+    background: linear-gradient(120deg, #455CE9 0%, #2d3436 100%);
+    padding: 120px 24px 100px 24px;
     text-align: center;
     position: relative;
     z-index: 1;
     margin-bottom: 0;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(69, 92, 233, 0.10);
+    animation: gradient 8s ease-in-out infinite;
 
     .ctaContent {
-      max-width: 800px;
+      max-width: 700px;
       margin: 0 auto;
+      background: rgba(255,255,255,0.07);
+      border-radius: 32px;
+      box-shadow: 0 8px 32px rgba(69,92,233,0.08);
+      padding: 48px 24px 40px 24px;
+      backdrop-filter: blur(2px);
 
       .sectionTitle {
         color: white !important;
@@ -608,57 +616,51 @@
       }
 
       p {
-        font-size: 1.2rem;
-        color: white;
-        margin-bottom: 40px;
-        line-height: 1.6;
-        opacity: 0.9;
+        font-size: 1.25rem;
+        color: #e3e7fa;
+        margin-bottom: 38px;
+        line-height: 1.7;
+        font-weight: 500;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       h2 {
-        font-size: clamp(2rem, 4vw, 3rem);
-        margin-bottom: 20px;
-        font-weight: 700;
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        margin-bottom: 18px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        color: #fff;
+        background: linear-gradient(90deg, #fff 60%, #455CE9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
 
-      .ctaButtons {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-
-        a {
-          padding: 16px 32px;
-          border-radius: 12px;
-          font-weight: 600;
-          font-size: 1.1rem;
-          text-decoration: none;
-          transition: all 0.3s ease;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-
-          &.primaryButton {
-            background: white;
-            color: #455CE9;
-
-            &:hover {
-              transform: translateY(-2px);
-              box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            }
-          }
-
-          &.secondaryButton {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-
-            &:hover {
-              background: white;
-              color: #455CE9;
-              transform: translateY(-2px);
-            }
-          }
+      .ctaButton {
+        display: inline-block;
+        padding: 18px 48px;
+        border-radius: 18px;
+        font-size: 1.25rem;
+        font-weight: 700;
+        background: linear-gradient(90deg, #fff 0%, #455CE9 100%);
+        color: #2d3436;
+        text-decoration: none;
+        box-shadow: 0 4px 24px rgba(69,92,233,0.13);
+        letter-spacing: 0.01em;
+        border: none;
+        transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+        margin-top: 10px;
+        position: relative;
+        overflow: hidden;
+        z-index: 2;
+        cursor: pointer;
+        &:hover {
+          background: linear-gradient(90deg, #455CE9 0%, #fff 100%);
+          color: #455CE9;
+          transform: translateY(-3px) scale(1.04);
+          box-shadow: 0 8px 32px rgba(69,92,233,0.18);
         }
       }
     }

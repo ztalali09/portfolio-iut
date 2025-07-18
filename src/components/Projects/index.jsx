@@ -9,11 +9,26 @@ import Rounded from '../../common/RoundedButton';
 
 const projects = [
   {
+    title: "Gaming Zone System",
+    src: "gaming-zone.png",
+    color: "#455CE9",
+    description: "A modular, premium booking platform for gaming centers and beyond. Mobile-first, secure, and fully customizable.",
+    context: "Solo project — fullstack, advanced security, adaptable to any sector.",
+    technologies: ["Next.js", "Flask", "MySQL", "Tailwind CSS"],
+    features: [
+      "Real-time booking",
+      "Admin dashboard",
+      "User profiles",
+      "Mobile-first design"
+    ],
+    mainImage: "/images/gaming-zone.png"
+  },
+  {
     title: "Techmobile",
     src: "telephones.jpg",
     color: "#000000",
-    description: "Application web complète de gestion et de vente de téléphones, offrant une expérience utilisateur fluide et intuitive pour les clients et les administrateurs.",
-    context: "Projet académique (SAE-345) réalisé dans le cadre de mon parcours de formation en développement web.",
+    description: "A seamless platform for managing and selling mobile devices, designed for both user delight and administrative efficiency.",
+    context: "Academic project (SAE-345) developed as part of my web development journey.",
     technologies: ["Flask (Python)", "Jinja", "SQL", "HTML/CSS"],
     features: [
       "Catalogue de téléphones",
@@ -30,8 +45,8 @@ const projects = [
     title: "Office Studio",
     src: "officestudio.png",
     color: "#8C8C8C",
-    description: "Plateforme de gestion d'espaces de coworking permettant aux utilisateurs de réserver des espaces de travail, gérer leurs abonnements et interagir avec la communauté.",
-    context: "Projet personnel développé pour répondre aux besoins croissants des espaces de coworking et des travailleurs indépendants.",
+    description: "A dynamic coworking management system—book spaces, manage memberships, and connect with a thriving community.",
+    context: "Personal project designed to meet the growing needs of coworking spaces and freelancers.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Socket.io", "Stripe"],
     features: [
       "Système de réservation en temps réel",
@@ -47,8 +62,8 @@ const projects = [
     title: "Avatar Gaming",
     src: "avatar_games.png",
     color: "#EFE8D3",
-    description: "Agrégateur de Mini-Jeux HTML5 Optimisé SEO avec Intégration AdSense.",
-    context: "Plateforme web personnelle offrant une collection de jeux HTML5 avec une expérience utilisateur optimisée.",
+    description: "A curated collection of SEO-optimized HTML5 mini-games, blending fun with performance and monetization.",
+    context: "Personal web platform offering a curated collection of HTML5 games with an optimized user experience.",
     technologies: ["HTML5", "CSS3", "JavaScript", "SEO"],
     features: [
       "Interface responsive",
@@ -62,8 +77,8 @@ const projects = [
     title: "PuissanceX",
     src: "connect4.png",
     color: "#706D63",
-    description: "Version moderne du jeu Connect 4 avec IA intégrée.",
-    context: "Projet développé en Java avec une architecture MVC et une intelligence artificielle.",
+    description: "A modern, AI-powered take on Connect 4, built with robust architecture and smart gameplay.",
+    context: "Project developed in Java with an MVC architecture and artificial intelligence.",
     technologies: ["Java 17", "Maven", "Boardifier", "JUnit 5"],
     features: [
       "Modes de jeu variés",
@@ -81,7 +96,7 @@ const scaleAnimation = {
     closed: {scale: 0, x:"-50%", y:"-50%", transition: {duration: 0.4, ease: [0.32, 0, 0.67, 0]}}
 }
 
-export default function Home() {
+export default function Projects() {
   const [modal, setModal] = useState({active: false, index: 0})
   const { active, index } = modal;
   const modalContainer = useRef(null);
@@ -108,11 +123,13 @@ export default function Home() {
 
     // Nettoyage lors du démontage
     return () => {
-      if (cursor.current) {
-        cursor.current.style.display = 'none';
+      const cursorElement = cursor.current;
+      const cursorLabelElement = cursorLabel.current;
+      if (cursorElement) {
+        cursorElement.style.display = 'none';
       }
-      if (cursorLabel.current) {
-        cursorLabel.current.style.display = 'none';
+      if (cursorLabelElement) {
+        cursorLabelElement.style.display = 'none';
       }
     };
   }, []);
@@ -139,13 +156,7 @@ export default function Home() {
           projects.map((project, index) => {
             return <Project index={index} title={project.title} manageModal={manageModal} key={index}>
               <div className={styles.projectImage}>
-                <Image 
-                  src={`/images/${project.src}`}
-                  alt={project.title}
-                  width={300}
-                  height={0}
-                  style={{ objectFit: 'cover' }}
-                />
+                <Image src={`/images/${project.src}`} alt={project.title} width={300} height={200} style={{ objectFit: 'cover' }} />
               </div>
             </Project>
           })
@@ -153,7 +164,7 @@ export default function Home() {
       </div>
       <Rounded>
         <a href="/projects" style={{ textDecoration: 'none', color: 'inherit', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <p>Voir les projets</p>
+          <p>See My Work</p>
         </a>
       </Rounded>
       <>
@@ -175,7 +186,7 @@ export default function Home() {
           </div>
         </motion.div>
         <motion.div ref={cursor} className={styles.cursor} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}></motion.div>
-        <motion.div ref={cursorLabel} className={styles.cursorLabel} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>Voir</motion.div>
+        <motion.div ref={cursorLabel} className={styles.cursorLabel} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>View</motion.div>
       </>
     </main>
   )

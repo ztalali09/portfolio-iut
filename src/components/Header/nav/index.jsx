@@ -6,19 +6,18 @@ import { menuSlide } from '../animation';
 import Link from './Link';
 import Curve from './Curve';
 import Footer from './Footer';
-import { slideUp } from './animation';
 
 const navItems = [
   {
-    title: "Accueil",
+    title: "Home",
     href: "/",
   },
   {
-    title: "À propos",
+    title: "About",
     href: "/about",
   },
   {
-    title: "Projets",
+    title: "Projects",
     href: "/projects",
   },
   {
@@ -27,7 +26,7 @@ const navItems = [
   },
 ]
 
-export default function Nav() {
+export default function index({ closeMenu }) {
 
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
@@ -51,8 +50,9 @@ export default function Nav() {
                         key={index} 
                         data={{...data, index}} 
                         isActive={selectedIndicator == data.href} 
-                        setSelectedIndicator={setSelectedIndicator}>
-                        </Link>
+                        setSelectedIndicator={setSelectedIndicator}
+                        onNavigate={closeMenu}
+                        />
                       })
                     }
             </div>

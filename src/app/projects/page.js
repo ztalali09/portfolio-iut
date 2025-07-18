@@ -122,11 +122,11 @@ export default function ProjectsPage() {
           transition={{ duration: 0.8 }}
           className={styles.heroContent}
         >
-          <h1>Mes Projets</h1>
-          <p>Découvrez mes réalisations en développement web et applications</p>
+          <h1>My Projects</h1>
+          <p>Explore a selection of my work in web development and digital solutions.</p>
           <div className={styles.heroButtons}>
             <a href="/images/Talali_zakaria_traces.pdf" target="_blank" rel="noopener noreferrer" className={styles.secondaryButton}>
-              <FaDownload /> Télécharger Toutes les Traces
+              <FaDownload /> Download All Project Docs
             </a>
           </div>
         </motion.div>
@@ -158,15 +158,26 @@ export default function ProjectsPage() {
                   <div className={styles.projectLinks}>
                     {project.github && (
                     <a href={project.github} target="_blank" rel="noopener noreferrer" className={styles.projectLink}>
-                      <FaGithub /> Code Source
+                      <FaGithub /> Source Code
                     </a>
                     )}
-                    <button 
-                      onClick={() => handleProjectClick(project.id)} 
-                      className={styles.projectLink}
-                    >
-                      <FaExternalLinkAlt /> En Savoir Plus
-                    </button>
+                    {project.title.startsWith('Gaming Zone System') ? (
+                      <a
+                        href="/projects/gaming-zone-system"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.projectLink}
+                      >
+                        <FaExternalLinkAlt /> Learn More
+                      </a>
+                    ) : (
+                      <button 
+                        onClick={() => handleProjectClick(project.id)} 
+                        className={styles.projectLink}
+                      >
+                        <FaExternalLinkAlt /> Learn More
+                      </button>
+                    )}
                   </div>
                 </div>
                 <div className={styles.projectImage}>
@@ -198,8 +209,8 @@ export default function ProjectsPage() {
           viewport={{ once: true }}
           className={styles.ctaContent}
         >
-          <h2>Contactez-moi</h2>
-          <p>N'hésitez pas à me contacter pour toute question ou opportunité professionnelle.</p>
+          <h2>Let’s Collaborate</h2>
+          <p>Interested in working together or have a project in mind? Let’s connect and create something impactful.</p>
           <div className={styles.ctaButtons}>
             <a 
               href="/images/CV_Talali_Zakaria.pdf" 
@@ -207,10 +218,10 @@ export default function ProjectsPage() {
               rel="noopener noreferrer" 
               className={styles.primaryButton}
             >
-              <FaDownload /> Télécharger mon CV
+              <FaDownload /> Download My Resume
             </a>
             <a href="/contact" className={styles.secondaryButton}>
-              Contactez-moi
+              Contact Me
             </a>
           </div>
         </motion.div>
@@ -220,7 +231,7 @@ export default function ProjectsPage() {
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
           <div className={styles.footerInfo}>
-            <p>Version 2025 © Édition</p>
+            <p>Version 2025 © Edition</p>
             <p>{currentTime} Paris</p>
           </div>
           <div className={styles.footerLinks}>

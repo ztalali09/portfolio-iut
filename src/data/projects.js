@@ -1,13 +1,59 @@
 export const projects = [
   {
+    id: 5,
+    title: "Gaming Zone System — Modular & Premium Booking Platform",
+    thumbnailImage: "/images/gaming-zone.png",
+    mainImage: "/images/gaming-zone.png",
+    color: "#455CE9",
+    description: "A turnkey solution for reservation management, adaptable to any sector (gaming, hotels, clubs, stadiums…).",
+    context: "Solo-developed in 1.5 months — fullstack, secure, and highly adaptable.",
+    target: "Businesses and organizations seeking a premium, modular booking platform.",
+    technologies: [
+      "Fullstack",
+      "Advanced security",
+      "Highly adaptable",
+      "Solo development"
+    ],
+    features: [
+      "Modular booking system",
+      "Premium user experience",
+      "Advanced security features",
+      "Sector-agnostic adaptability"
+    ],
+    badges: [
+      "Fullstack",
+      "Solo-developed in 1.5 months",
+      "Advanced security",
+      "Adaptable to any sector"
+    ],
+    tasks: [
+      "System architecture design",
+      "Frontend and backend development",
+      "Security implementation",
+      "Deployment and documentation"
+    ],
+    learnings: [
+      "End-to-end project management",
+      "Security best practices",
+      "Modular system design"
+    ],
+    challenges: [
+      "Ensuring cross-sector adaptability",
+      "Implementing robust security",
+      "Delivering a premium UX solo"
+    ],
+    github: null,
+    demo: null
+  },
+  {
     id: 1,
     title: "Techmobile",
     thumbnailImage: "/images/telephones.jpg",
     mainImage: "/images/C1-tel.png",
     color: "#000000",
-    description: "Application web de gestion et de vente de téléphones offrant une expérience utilisateur fluide et intuitive. Le projet permet aux clients de consulter le catalogue, gérer leur panier, passer des commandes et laisser des commentaires, tandis que les administrateurs peuvent gérer les produits, les commandes et visualiser les données de vente.",
-    context: "Projet réalisé dans le cadre de mon parcours académique (SAE-345), visant à mettre en pratique mes compétences en développement web et en gestion de bases de données.",
-    target: "Clients souhaitant acheter des téléphones et administrateurs gérant le catalogue et les commandes.",
+    description: "A seamless web platform for managing and selling mobile devices, designed to deliver an intuitive experience for both customers and administrators. Features include a dynamic catalog, order management, product reviews, and advanced admin tools.",
+    context: "Academic project (SAE-345) — a hands-on journey in web development and database management.",
+    target: "Individuals seeking to purchase mobile phones and administrators responsible for catalog and order management.",
     technologies: [
       "Flask (Python)",
       "Jinja2",
@@ -18,35 +64,35 @@ export const projects = [
       "Shell Script"
     ],
     features: [
-      "Catalogue de téléphones interactif",
-      "Gestion du panier et liste d'envies",
-      "Système de commandes et suivi",
-      "Système de commentaires",
-      "Interface d'administration complète",
-      "Visualisation des données de vente",
-      "Gestion des stocks",
-      "Modération des commentaires"
+      "Interactive phone catalog",
+      "Cart and wishlist management",
+      "Order system and tracking",
+      "Product review system",
+      "Comprehensive admin interface",
+      "Sales data visualization",
+      "Inventory management",
+      "Comment moderation"
     ],
     tasks: [
-      "Conception et implémentation de la base de données",
-      "Développement des contrôleurs Flask",
-      "Création des templates Jinja2",
-      "Mise en place du système d'authentification",
-      "Développement des fonctionnalités admin",
-      "Intégration des visualisations de données"
+      "Database design and implementation",
+      "Flask controller development",
+      "Jinja2 template creation",
+      "Authentication system setup",
+      "Admin features development",
+      "Data visualization integration"
     ],
     learnings: [
-      "Architecture MVC avec Flask",
-      "Gestion de bases de données relationnelles",
-      "Développement d'interfaces utilisateur",
-      "Sécurité des applications web",
-      "Visualisation de données"
+      "MVC architecture with Flask",
+      "Relational database management",
+      "User interface development",
+      "Web application security",
+      "Data visualization"
     ],
     challenges: [
-      "Optimisation des performances de la base de données",
-      "Gestion des sessions utilisateurs",
-      "Sécurisation des transactions",
-      "Mise en place d'une interface admin intuitive"
+      "Database performance optimization",
+      "User session management",
+      "Securing transactions",
+      "Designing an intuitive admin interface"
     ],
     github: "https://github.com/maevatomvil/SAE-345",
     demo: "https://gestion-telephones-demo.com"
@@ -56,9 +102,9 @@ export const projects = [
     title: "Office Studio",
     mainImage: "/images/officestudio.png",
     color: "#8C8C8C",
-    description: "Plateforme de gestion d'espaces de coworking permettant aux utilisateurs de réserver des espaces de travail, gérer leurs abonnements et interagir avec la communauté.",
-    context: "Projet personnel développé pour répondre aux besoins croissants des espaces de coworking et des travailleurs indépendants.",
-    target: "Propriétaires d'espaces de coworking, travailleurs indépendants, startups et petites entreprises.",
+    description: "A dynamic coworking management platform empowering users to book workspaces, manage memberships, and engage with a vibrant community. Built for flexibility, security, and real-time collaboration.",
+    context: "Personal project — crafted to meet the evolving needs of coworking spaces, freelancers, and startups.",
+    target: "Coworking space owners, freelancers, startups, and small businesses.",
     technologies: [
       "React",
       "Node.js",
@@ -70,14 +116,14 @@ export const projects = [
       "AWS"
     ],
     features: [
-      "Système de réservation en temps réel",
-      "Paiements sécurisés avec Stripe",
-      "Chat en direct entre membres",
-      "Gestion des abonnements",
-      "Interface admin complète",
-      "Notifications en temps réel",
-      "Statistiques et rapports",
-      "API RESTful"
+      "Real-time booking system",
+      "Secure payments with Stripe",
+      "Live member chat",
+      "Subscription management",
+      "Comprehensive admin interface",
+      "Real-time notifications",
+      "Statistics and reporting",
+      "RESTful API"
     ],
     tasks: [
       "Développement du backend avec Node.js",
@@ -88,17 +134,17 @@ export const projects = [
       "Déploiement sur AWS"
     ],
     learnings: [
-      "Architecture microservices",
-      "Sécurité des applications web",
-      "Gestion des paiements en ligne",
-      "Communication en temps réel",
-      "Gestion des bases de données NoSQL"
+      "Microservices architecture",
+      "Web application security",
+      "Online payment management",
+      "Real-time communication",
+      "NoSQL database management"
     ],
     challenges: [
-      "Gestion des conflits de réservation",
-      "Mise en place d'un système de paiement sécurisé",
-      "Optimisation des performances en temps réel",
-      "Scalabilité de l'application"
+      "Handling booking conflicts",
+      "Implementing a secure payment system",
+      "Real-time performance optimization",
+      "Application scalability"
     ],
     github: null,
     demo: "https://office-studio-demo.com"
@@ -109,9 +155,9 @@ export const projects = [
     mainImage: "/images/avatar_games.png",
     secondImage: "/images/avatar-game2.png",
     color: "#EFE8D3",
-    description: "Agrégateur de Mini-Jeux HTML5 Optimisé SEO avec Intégration AdSense. Une plateforme web personnelle qui offre une collection de jeux HTML5 avec une expérience utilisateur optimisée.",
-    context: "Projet développé pour créer une plateforme de jeux HTML5 avec une attention particulière à l'optimisation SEO et la monétisation via AdSense.",
-    target: "Joueurs occasionnels, passionnés de jeux HTML5, et utilisateurs cherchant une expérience de jeu fluide et accessible.",
+    description: "A curated HTML5 mini-games hub, SEO-optimized and AdSense-ready. This personal platform delivers a smooth, engaging gaming experience with a focus on discoverability and monetization.",
+    context: "Personal project — designed to blend fun, performance, and revenue through modern web technologies.",
+    target: "Casual gamers, HTML5 game enthusiasts, and users seeking a smooth and accessible gaming experience.",
     technologies: [
       "HTML5",
       "CSS3",
@@ -123,14 +169,14 @@ export const projects = [
       "Performance Web"
     ],
     features: [
-      "Interface responsive et interactive",
-      "Optimisation SEO avancée",
-      "Intégration AdSense",
-      "Gestion des performances",
-      "Navigation intuitive",
-      "Multi-plateforme",
-      "Sécurité web",
-      "Analyse de trafic"
+      "Responsive and interactive interface",
+      "Advanced SEO optimization",
+      "AdSense integration",
+      "Performance management",
+      "Intuitive navigation",
+      "Multi-platform support",
+      "Web security",
+      "Traffic analytics"
     ],
     tasks: [
       "Création de l'interface responsive",
@@ -141,46 +187,46 @@ export const projects = [
       "Analyse des performances"
     ],
     learnings: [
-      "Techniques avancées de SEO",
-      "Gestion de la monétisation",
-      "Optimisation des performances",
-      "Sécurité web",
-      "Analyse de trafic"
+      "Advanced SEO techniques",
+      "Monetization management",
+      "Performance optimization",
+      "Web security",
+      "Traffic analysis"
     ],
     challenges: [
-      "Optimisation du référencement",
-      "Gestion des publicités",
-      "Performance des jeux",
-      "Sécurité des données"
+      "SEO optimization",
+      "Ad management",
+      "Game performance",
+      "Data security"
     ],
     github: null,
     demo: null
   },
   {
     id: 4,
-    title: "PuissanceX",
+    title: "PuissanceX — Modern Connect 4",
     mainImage: "/images/connect4.png",
     color: "#706D63",
-    description: "PuissanceX est une version moderne et évolutive du jeu classique Connect 4, développée en Java avec une architecture MVC propre et propulsée par le framework Boardifier. Le jeu est jouable en console et est conçu pour accueillir une future interface graphique JavaFX.",
-    context: "Projet développé pour créer une version améliorée du jeu Connect 4, avec une attention particulière portée à l'architecture logicielle et l'intégration d'intelligence artificielle.",
-    target: "Passionnés de jeux de stratégie, développeurs intéressés par l'IA, et joueurs cherchant une expérience de jeu moderne.",
+    description: "A modern, scalable take on the classic Connect 4 game, built in Java with a clean MVC architecture and AI integration. Playable in console, designed for future graphical expansion.",
+    context: "Academic project — focused on software architecture, AI, and delivering a next-generation strategy game experience.",
+    target: "Strategy game enthusiasts, developers interested in AI, and players seeking a modern gaming experience.",
     technologies: [
       "Java 17",
       "Maven",
       "Boardifier (MVC framework)",
-      "JavaFX (à venir)",
-      "Deeplearning4j (IA avancée, à venir)",
+      "JavaFX (upcoming)",
+      "Deeplearning4j (advanced AI, upcoming)",
       "JUnit 5"
     ],
     features: [
-      "Modes de jeu variés (Humain vs Humain, Humain vs IA, IA vs IA)",
-      "Paramétrage avancé (taille du plateau, condition de victoire, niveau de difficulté)",
-      "Intelligence artificielle intégrée (Minimax et Deep Learning)",
-      "Architecture modulaire MVC",
-      "Tests unitaires avec JUnit 5",
-      "Interface console intuitive",
-      "Système de menu dynamique",
-      "Gestion des états de jeu"
+      "Multiple game modes (Human vs Human, Human vs AI, AI vs AI)",
+      "Advanced settings (board size, win condition, difficulty level)",
+      "Integrated AI (Minimax and Deep Learning)",
+      "Modular MVC architecture",
+      "Unit testing with JUnit 5",
+      "Intuitive console interface",
+      "Dynamic menu system",
+      "Game state management"
     ],
     tasks: [
       "Implémentation de l'architecture MVC",
@@ -191,17 +237,17 @@ export const projects = [
       "Développement du système de menu"
     ],
     learnings: [
-      "Architecture MVC avec Java",
-      "Implémentation d'algorithmes d'IA",
-      "Développement d'interfaces console",
-      "Tests unitaires avec JUnit",
-      "Gestion de projet avec Maven"
+      "MVC architecture with Java",
+      "AI algorithm implementation",
+      "Console interface development",
+      "Unit testing with JUnit",
+      "Project management with Maven"
     ],
     challenges: [
-      "Optimisation de l'algorithme Minimax",
-      "Gestion des états de jeu complexes",
-      "Création d'une interface utilisateur intuitive",
-      "Intégration future de JavaFX"
+      "Minimax algorithm optimization",
+      "Managing complex game states",
+      "Designing an intuitive user interface",
+      "Future integration of JavaFX"
     ],
     github: "https://github.com/gh-Constant/SAE_PuissanceX",
     demo: null
