@@ -5,7 +5,7 @@ import styles from '../page.module.scss';
 import { motion, AnimatePresence } from 'framer-motion';
 import * as THREE from 'three';
 import { FaDownload, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { MdSportsEsports, MdHotel, MdSportsSoccer, MdStadium, MdMeetingRoom, MdAdminPanelSettings, MdHistory, MdCategory, MdWeb, MdCode, MdStorage, MdBuild, MdBugReport, MdStar, MdPerson, MdSchool, MdLock, MdEventAvailable, MdDashboard, MdNotificationsActive, MdDevices, MdSecurity, MdTrendingUp, MdDescription, MdUpdate, MdSupportAgent } from 'react-icons/md';
+import { MdSportsEsports, MdHotel, MdSportsSoccer, MdStadium, MdMeetingRoom, MdAdminPanelSettings, MdHistory, MdCategory, MdWeb, MdCode, MdStorage, MdBuild, MdBugReport, MdStar, MdPerson, MdSchool, MdLock, MdEventAvailable, MdDashboard, MdNotificationsActive, MdDevices, MdSecurity, MdTrendingUp, MdDescription, MdUpdate, MdSupportAgent, MdCheckCircle, MdCreditCard, MdAttachMoney } from 'react-icons/md';
 
 const slideshowImages = [
   '/images/blank.png',
@@ -95,25 +95,31 @@ export default function GamingZoneSystem() {
 
   // Carousel expérience utilisateur
   const uxScreens = [
-    { title: 'Accueil sur mobile', img: '/images/blank.png' },
-    { title: 'Accueil sur desktop', img: '/images/blank.png' },
-    { title: 'Formulaire de réservation sur smartphone', img: '/images/blank.png' },
-    { title: 'Interface admin sur tablette', img: '/images/blank.png' },
-    { title: 'Email de confirmation sur mobile', img: '/images/blank.png' },
+    { title: 'Navigation sur mobile', img: '/images/images section/1.png' },
+    { title: 'Réservation sur tablette', img: '/images/images section/2.png' },
+    { title: 'Gestion admin sur desktop', img: '/images/images section/3.png' },
+    { title: 'Confirmation utilisateur', img: '/images/images section/4.png' },
   ];
   const [uxIndex, setUxIndex] = useState(0);
   const handlePrevUx = () => setUxIndex((prev) => (prev === 0 ? uxScreens.length - 1 : prev - 1));
   const handleNextUx = () => setUxIndex((prev) => (prev === uxScreens.length - 1 ? 0 : prev + 1));
+  // Défilement automatique du carousel UX
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setUxIndex((prev) => (prev + 1) % uxScreens.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [uxScreens.length]);
 
   return (
     <div className={styles.projectsPage}>
       <Header />
       <canvas ref={canvasRef} className={styles.backgroundCanvas} />
-      <section className={styles.hero + ' ' + styles.gamingZoneHero} style={{ minHeight: 0, padding: '60px 0 0 0' }}>
+      <section className={styles.hero + ' ' + styles.gamingZoneHero}>
         <div className={styles.heroContent}>
           <h3>Gaming Zone System — Plateforme de réservation modulaire & premium</h3>
           <p>Solution clé en main pour la gestion de réservations, adaptable à tous les secteurs (gaming, hôtels, clubs, stades…)</p>
-          <div className={styles.badges + ' badges'} style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginTop: 24 }}>
+          <div className={styles.badges + ' badges'}>
             <span style={{ background: 'rgba(69,92,233,0.1)', color: '#455CE9', padding: '10px 22px', borderRadius: 20, fontWeight: 600, fontSize: '1.05rem' }}>Fullstack</span>
             <span style={{ background: 'rgba(69,92,233,0.1)', color: '#455CE9', padding: '10px 22px', borderRadius: 20, fontWeight: 600, fontSize: '1.05rem' }}>Développé seul en 2 mois</span>
             <span style={{ background: 'rgba(69,92,233,0.1)', color: '#455CE9', padding: '10px 22px', borderRadius: 20, fontWeight: 600, fontSize: '1.05rem' }}>Sécurité avancée</span>
@@ -125,118 +131,119 @@ export default function GamingZoneSystem() {
       <section className={styles.premiumSummary}>
         <div className={styles.premiumSummaryContent}>
           <div className={styles.premiumSummaryImage}>
-            <img src="/images/blank.png" alt="Résumé premium illustration" style={{ width: '100%', height: 'auto', borderRadius: 18, background: '#fff', boxShadow: '0 4px 24px rgba(69,92,233,0.08)' }} />
+            <img src="/images/pc-tele.png" alt="Résumé premium illustration" style={{ width: '130%', maxWidth: '800px', height: 'auto', borderRadius: 0, background: 'none', boxShadow: 'none' }} />
           </div>
           <div className={styles.premiumSummaryText}>
-            <h2>Résumé premium</h2>
+            <h2>L’Expérience Gaming Zone</h2>
             <div className={styles.premiumPitch}>
               <p>
-                Plateforme de réservation et de gestion tout-en-un, pensée pour la performance, la sécurité et l’expérience utilisateur.<br/>
-                Adaptable à tout type d’activité nécessitant des réservations (gaming, sport, hôtellerie, coworking…).
+                Découvrez une plateforme de réservation et de gestion nouvelle génération, conçue pour offrir une expérience fluide, rapide et ultra-sécurisée.<br/>
+                Gaming Zone System s’adapte à tous les univers : gaming, sport, hôtellerie, coworking et bien plus. Offrez à vos clients une interface élégante, des fonctionnalités sur-mesure et une performance sans compromis.<br/>
+                Transformez la gestion de vos réservations en un véritable atout business, et démarquez-vous par l’innovation et la simplicité.
               </p>
             </div>
           </div>
         </div>
       </section>
-      {/* Expérience utilisateur sur tous les supports */}
-      <section className={styles.responsiveSection}>
-        <div className={styles.responsiveContent}>
-          <div className={styles.responsiveText}>
-            <h2>Expérience utilisateur sur tous les supports</h2>
-            <p>
-              L’interface est 100% responsive, optimisée pour mobile, tablette et desktop.<br/>
-              Les utilisateurs et admins bénéficient d’une expérience fluide sur tous les appareils.
-            </p>
-          </div>
-          <div className={styles.uxCarousel}>
-            <button className={styles.carouselArrow} onClick={handlePrevUx} aria-label="Précédent">
-              <FaChevronLeft />
-            </button>
-            <div className={styles.mockup}>
-              <img src={uxScreens[uxIndex].img} alt={uxScreens[uxIndex].title} />
-              <span>{uxScreens[uxIndex].title}</span>
-            </div>
-            <button className={styles.carouselArrow} onClick={handleNextUx} aria-label="Suivant">
-              <FaChevronRight />
-            </button>
-          </div>
-        </div>
-      </section>
       {/* Fonctionnalités clés */}
       <section className={styles.featuresSection}>
-        <h2>Fonctionnalités clés</h2>
+        <h2>Aperçu des fonctionnalités</h2>
         <div className={styles.featuresGrid}>
-          {/* Carte 1 : Inscription */}
+          {/* 1. Inscription */}
           <div className={styles.featureCard}>
-            <div className={styles.featureIcon}><img src="/images/blank.png" alt="Inscription" /></div>
-            <h3>Inscription</h3>
-            <p>Créez un compte en quelques secondes pour accéder à toutes les fonctionnalités.</p>
+            <div className={styles.featureIcon}><MdPerson size={48} color="#455CE9" /></div>
+            <div style={{textAlign: 'center'}}>
+              <h3>Inscription rapide</h3>
+              <p>Créez un compte en quelques secondes pour accéder à la plateforme Gaming Zone.</p>
+            </div>
           </div>
-          {/* Carte 2 : Connexion */}
+          {/* 2. Connexion */}
           <div className={styles.featureCard}>
-            <div className={styles.featureIcon}><img src="/images/blank.png" alt="Connexion" /></div>
-            <h3>Connexion</h3>
-            <p>Connectez-vous de façon sécurisée pour gérer vos réservations et votre profil.</p>
+            <div className={styles.featureIcon}><MdLock size={48} color="#455CE9" /></div>
+            <div style={{textAlign: 'center'}}>
+              <h3>Connexion sécurisée</h3>
+              <p>Authentification moderne avec reCAPTCHA et gestion des accès sécurisés.</p>
+            </div>
           </div>
-          {/* Carte 3 : Réservation en temps réel */}
+          {/* 3. Accueil */}
           <div className={styles.featureCard}>
-            <div className={styles.featureIcon}><img src="/images/blank.png" alt="Réservation en temps réel" /></div>
-            <h3>Réservation en temps réel</h3>
-            <p>Réservez instantanément selon les disponibilités à jour.</p>
+            <div className={styles.featureIcon}><MdDashboard size={48} color="#455CE9" /></div>
+            <div style={{textAlign: 'center'}}>
+              <h3>Accueil personnalisé</h3>
+              <p>Retrouvez toutes vos actions principales dès l’arrivée sur la plateforme.</p>
+            </div>
           </div>
-          {/* Carte 4 : Confirmation */}
+          {/* 4. Choix équipement */}
           <div className={styles.featureCard}>
-            <div className={styles.featureIcon}><img src="/images/blank.png" alt="Confirmation" /></div>
-            <h3>Confirmation</h3>
-            <p>Recevez une confirmation claire à l’écran et par email après chaque réservation.</p>
+            <div className={styles.featureIcon}><MdDevices size={48} color="#455CE9" /></div>
+            <div style={{textAlign: 'center'}}>
+              <h3>Choix de l’équipement</h3>
+              <p>Sélectionnez la console ou le PC gaming de votre choix selon les disponibilités.</p>
+            </div>
           </div>
-          {/* Carte 5 : Upsell */}
+          {/* 5. Sélection créneau */}
           <div className={styles.featureCard}>
-            <div className={styles.featureIcon}><img src="/images/blank.png" alt="Upsell" /></div>
-            <h3>Upsell & options complémentaires</h3>
-            <p>Proposez des services additionnels ou des options lors de la réservation.</p>
+            <div className={styles.featureIcon}><MdEventAvailable size={48} color="#455CE9" /></div>
+            <div style={{textAlign: 'center'}}>
+              <h3>Réservation de créneau</h3>
+              <p>Réservez un créneau horaire précis et visualisez les postes disponibles en temps réel.</p>
+            </div>
           </div>
-          {/* Carte 6 : Historique */}
+          {/* 6. Mode de paiement */}
           <div className={styles.featureCard}>
-            <div className={styles.featureIcon}><img src="/images/blank.png" alt="Historique" /></div>
-            <h3>Historique des réservations</h3>
-            <p>Consultez l’historique complet de vos réservations passées et à venir.</p>
+            <div className={styles.featureIcon}><MdCreditCard size={48} color="#455CE9" /></div>
+            <div style={{textAlign: 'center'}}>
+              <h3>Choix du paiement</h3>
+              <p>Paiement en ligne ou sur place, selon votre préférence et votre confort.</p>
+            </div>
           </div>
-          {/* Carte 7 : Gestion de comptes */}
+          {/* 7. Résumé de commande */}
           <div className={styles.featureCard}>
-            <div className={styles.featureIcon}><img src="/images/blank.png" alt="Gestion de comptes" /></div>
-            <h3>Gestion de compte</h3>
-            <p>Modifiez vos informations personnelles et vos préférences facilement.</p>
+            <div className={styles.featureIcon}><MdDescription size={48} color="#455CE9" /></div>
+            <div style={{textAlign: 'center'}}>
+              <h3>Résumé de la commande</h3>
+              <p>Vérifiez tous les détails de votre réservation avant validation finale.</p>
+            </div>
           </div>
-          {/* Carte 8 : Statistiques du compte */}
+          {/* 8. Confirmation finale */}
           <div className={styles.featureCard}>
-            <div className={styles.featureIcon}><img src="/images/blank.png" alt="Statistiques du compte" /></div>
-            <h3>Statistiques du compte</h3>
-            <p>Visualisez vos statistiques d’utilisation et vos habitudes de réservation.</p>
+            <div className={styles.featureIcon}><MdCheckCircle size={48} color="#455CE9" /></div>
+            <div style={{textAlign: 'center'}}>
+              <h3>Confirmation instantanée</h3>
+              <p>Recevez une confirmation claire à l’écran et par email après chaque réservation.</p>
+            </div>
           </div>
-          {/* Carte 9 : Mot de passe oublié */}
+          {/* 9. Historique */}
           <div className={styles.featureCard}>
-            <div className={styles.featureIcon}><img src="/images/blank.png" alt="Mot de passe oublié" /></div>
-            <h3>Mot de passe oublié</h3>
-            <p>Réinitialisez facilement votre mot de passe en cas d’oubli grâce à un email sécurisé.</p>
+            <div className={styles.featureIcon}><MdHistory size={48} color="#455CE9" /></div>
+            <div style={{textAlign: 'center'}}>
+              <h3>Historique des réservations</h3>
+              <p>Consultez l’historique complet de vos réservations passées et à venir.</p>
+            </div>
           </div>
-          {/* Carte 10 : Gestion des créneaux */}
+          {/* 10. Mon compte */}
           <div className={styles.featureCard}>
-            <div className={styles.featureIcon}><img src="/images/blank.png" alt="Gestion des créneaux" /></div>
-            <h3>Gestion des créneaux et disponibilités</h3>
-            <p>Gérez les créneaux horaires, disponibilités et ressources en temps réel.</p>
+            <div className={styles.featureIcon}><MdPerson size={48} color="#455CE9" /></div>
+            <div style={{textAlign: 'center'}}>
+              <h3>Gestion du compte</h3>
+              <p>Modifiez vos informations personnelles, préférences et suivez vos succès.</p>
+            </div>
           </div>
-          {/* Carte 11 : Notifications */}
+          {/* 11. Statistiques */}
           <div className={styles.featureCard}>
-            <div className={styles.featureIcon}><img src="/images/blank.png" alt="Notifications" /></div>
-            <h3>Notifications et rappels</h3>
-            <p>Recevez des rappels automatiques et des notifications importantes.</p>
+            <div className={styles.featureIcon}><MdTrendingUp size={48} color="#455CE9" /></div>
+            <div style={{textAlign: 'center'}}>
+              <h3>Statistiques détaillées</h3>
+              <p>Visualisez vos statistiques d’utilisation et vos habitudes de réservation.</p>
+            </div>
           </div>
-          {/* Carte 12 : Emails de notifications */}
+          {/* 12. Points & Fidélisation */}
           <div className={styles.featureCard}>
-            <div className={styles.featureIcon}><img src="/images/blank.png" alt="Emails de notifications" /></div>
-            <h3>Emails de notifications</h3>
-            <p>Recevez des notifications importantes et des rappels directement par email.</p>
+            <div className={styles.featureIcon}><MdStar size={48} color="#455CE9" /></div>
+            <div style={{textAlign: 'center'}}>
+              <h3>Points & Niveaux Joueur</h3>
+              <p>Progressez en tant que joueur : gagnez des points à chaque réservation, débloquez des niveaux et profitez d’avantages exclusifs pour les membres les plus fidèles de la plateforme.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -246,8 +253,9 @@ export default function GamingZoneSystem() {
           <div className={styles.responsiveText}>
             <h2>Expérience utilisateur sur tous les supports</h2>
             <p>
-              L’interface est 100% responsive, optimisée pour mobile, tablette et desktop.<br/>
-              Les utilisateurs et admins bénéficient d’une expérience fluide sur tous les appareils.
+              Une expérience pensée d’abord pour le mobile : chaque page, chaque fonctionnalité s’adapte parfaitement à votre smartphone.<br/>
+              Profitez d’une interface moderne, intuitive et réactive, que vous soyez sur téléphone, tablette ou ordinateur.<br/>
+              Joueurs comme administrateurs bénéficient d’un confort d’utilisation optimal, partout et à tout moment.
             </p>
           </div>
           <div className={styles.uxCarousel}>
@@ -255,8 +263,7 @@ export default function GamingZoneSystem() {
               <FaChevronLeft />
             </button>
             <div className={styles.mockup}>
-              <img src={uxScreens[uxIndex].img} alt={uxScreens[uxIndex].title} />
-              <span>{uxScreens[uxIndex].title}</span>
+              <img src={uxScreens[uxIndex].img} alt="Aperçu expérience utilisateur" />
             </div>
             <button className={styles.carouselArrow} onClick={handleNextUx} aria-label="Suivant">
               <FaChevronRight />
