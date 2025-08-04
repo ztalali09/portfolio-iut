@@ -98,54 +98,75 @@ export default function AboutPage() {
 
   // Ajout des compétences techniques
   const technicalSkills = {
-    languages: [
-      "Python",
-      "Java",
-      "JavaScript",
-      "HTML5",
-      "CSS3",
-      "SQL",
-      "PL/SQL",
-      "TypeScript"
-    ],
-    frameworks: [
-      "Flask",
-      "JavaFX",
-      "Bootstrap",
-      "Next.js",
-      "React",
-      "Node.js",
-      "Express",
-      "Boardifier (MVC)"
-    ],
-    tools: [
-      "Linux",
-      "Terminal",
-      "VS Code",
-      "JetBrains (IntelliJ, PyCharm, WebStorm)",
-      "Git",
-      "GitLab",
-      "Maven",
-      "JUnit",
-      "Postman"
-    ],
-    databases: [
-      "MySQL",
-      "SQLite",
-      "PostgreSQL",
-      "Oracle SQL",
-      "MongoDB"
-    ],
-    other: [
-      "Architecture MVC",
-      "Développement Full-Stack",
-      "SEO & Performance Web",
-      "Tests unitaires",
-      "Intelligence Artificielle (Minimax)",
-      "Gestion de projet Agile",
-      "Utilisation intelligente de l'IA pour le développement"
-    ]
-  };
+  languages: [
+    "Python",
+    "Java",
+    "JavaScript",
+    "TypeScript",
+    "HTML5",
+    "CSS3",
+    "SQL",
+    "PL/SQL",
+    "Liquid (Shopify)"
+  ],
+  frameworks: [
+    "Flask",
+    "JavaFX",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Express",
+    "Bootstrap",
+    "Tailwind CSS",
+    "Boardifier (MVC)"
+  ],
+  tools: [
+    "Linux",
+    "Terminal",
+    "VS Code",
+    "JetBrains (IntelliJ, PyCharm, WebStorm)",
+    "Git",
+    "GitHub",
+    "GitLab",
+    "Maven",
+    "JUnit",
+    "Postman",
+    "Docker",
+    "Figma",
+    "Vercel",
+    "Netlify"
+  ],
+  databases: [
+    "MySQL",
+    "PostgreSQL",
+    "SQLite",
+    "Oracle SQL",
+    "MongoDB",
+    "Firebase"
+  ],
+  cms: [
+    "WordPress",
+    "Shopify",
+    "Strapi",
+    "Sanity",
+    "Contentful"
+  ],
+  other: [
+    "Full-Stack Development",
+    "MVC Architecture",
+    "RESTful API Design",
+    "SEO & Web Performance Optimization",
+    "Unit Testing",
+    "CI/CD Pipelines",
+    "Responsive Web Design",
+    "Artificial Intelligence (Minimax algorithm)",
+    "Agile Project Management",
+    "Shopify Webhooks & API Integration",
+    "Theme & Template Customization (Shopify & WordPress)",
+    "Smart Use of AI in Development"
+  ]
+};
+
 
   // Ajout des cours suivis
   const courses = [
