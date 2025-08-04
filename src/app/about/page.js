@@ -84,7 +84,7 @@ export default function AboutPage() {
     location: "Belfort, France",
     email: "talalizakariapro@gmail.com",
     phone: "+33 6 35342271",
-    birthDate: "18 ans",
+    birthDate: " ",
     formation: "BUT Informatique - 1ʳᵉ année",
     institution: "IUT Marie et Louis Pasteur de Belfort",
     languages: [
@@ -319,14 +319,13 @@ export default function AboutPage() {
                       <li><FaMapMarkerAlt /> Belfort, France</li>
                       <li><FaEnvelope /> talalizakariapro@gmail.com</li>
                       <li><FaPhone /> +33 6 35 34 22 71</li>
-                      <li><FaCalendarAlt /> 18 years old</li>
                     </ul>
                   </motion.div>
 
                   <motion.div className={styles.infoCard} variants={cardVariants} whileHover="hover">
                     <h3><FaGraduationCap /> Education</h3>
                     <ul>
-                      <li><strong>BUT Computer Science – 1st Year</strong></li>
+                      <li><strong>Pursuing a Bachelor's degree in Computer Science – Currently in 3rd year</strong></li>
                       <li>IUT Marie and Louis Pasteur, Belfort</li>
                     </ul>
                   </motion.div>
